@@ -1,0 +1,72 @@
+﻿@* NavMenu.razor *@
+
+<nav class="navbar">
+    <div class="navbar-desktop">
+        <a href="/" class="logo">
+            <img src="images/Logo.png" alt="Logo" />
+        </a>
+        <div class="nav-links">
+            <a href="/faqs">FAQs</a>
+            <div class="dropdown">
+                <a href="/comics" class="dropdown-toggle">Comics</a>
+                <div class="dropdown-menu">
+                    <a href="/comics/HopE">HopE</a>
+                    <a href="/comics/McThingies">McThingies</a>
+                </div>
+            </div>
+            <a href="/characters">Characters</a>
+            <a href="/portfolio">Portfolio</a>
+            <a href="/about">About Me</a>
+            <a href="/">Home</a>
+        </div>
+    </div>
+
+    <div class="navbar-mobile">
+        <button class="burger-button" @onclick="ToggleMenu">
+            <span class="burger-icon"></span>
+        </button>
+        <div class="logo">
+            <a href="/"><img src="Logo.png" alt="Logo"></a>
+        </div>
+    </div>
+
+    @if (isMenuOpen)
+    {
+        <div class="mobile-menu">
+            <a href="/">Home</a>
+            <a href="/faqs">FAQs</a>
+            <a href="/characters">Characters</a>
+            <a href="/portfolio">Portfolio</a>
+            <a href="/about">About Me</a>
+            <div class="dropdown">
+                <a href="#">Comics</a>
+                <div class="dropdown-menu">
+                    <a href="/comics/HopE">HopE</a>
+                    <a href="/comics/McThingies">McThingies</a>
+                </div>
+            </div>
+        </div>
+    }
+
+</nav>
+
+@code {
+    private bool isMobileMenuOpen = false;
+    private bool isComicsDropdownOpen = false;
+    private bool isMenuOpen = false;
+
+    private void ToggleMenu()
+    {
+        isMenuOpen = !isMenuOpen;
+    }
+
+    private void ToggleMobileMenu()
+    {
+        isMobileMenuOpen = !isMobileMenuOpen;
+    }
+
+    private void ToggleComicsDropdown()
+    {
+        isComicsDropdownOpen = !isComicsDropdownOpen;
+    }
+}
