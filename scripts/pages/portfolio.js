@@ -20,8 +20,8 @@
         { year: 2025, month: 6, day: 25, file: '25-06-24 2.png', caption: 'Inu, For a panel of Inu-sual Feelings Chapter 2' },
         { year: 2025, month: 5, day: 5, file: '25-05-04.jpeg', caption: 'Laika, in the style of Pinky and Pepper Forever' },
         { year: 2025, month: 4, day: 29, file: '25-04-28.jpeg', caption: 'Chiyo-chan, gift for TheBlackHex.',captionHtml: 'Chiyo-chan, gift for <a href="https://x.com/TheBlackHex" target="_blank" rel="noopener noreferrer">TheBlackHex</a>.'},
-        { year: 2025, month: 4, day: 7, file: '25-04-06.PNG', caption: 'Snow, gift for HeroKing.',captionHtml: 'Snow, gift for <a href="https://x.com/HeroKing7077" target="_blank" rel="noopener noreferrer">HeroKing</a>.'},
-        { year: 2025, month: 2, day: 19, file: '25-02-18.PNG', caption: 'Birthday gift for Kookix.',captionHtml: 'Birthday gift for <a href="https://x.com/_Kookix_" target="_blank" rel="noopener noreferrer">Kookix</a>.'},
+        { year: 2025, month: 4, day: 7, file: '25-04-06.png', caption: 'Snow, gift for HeroKing.',captionHtml: 'Snow, gift for <a href="https://x.com/HeroKing7077" target="_blank" rel="noopener noreferrer">HeroKing</a>.'},
+        { year: 2025, month: 2, day: 19, file: '25-02-18.png', caption: 'Birthday gift for Kookix.',captionHtml: 'Birthday gift for <a href="https://x.com/_Kookix_" target="_blank" rel="noopener noreferrer">Kookix</a>.'},
 
         { year: 2024, month: 11, day: 4, file: '24-11-03.png', caption: 'Alice, Birthday gift for Waffu.',captionHtml: 'Alice, Birthday gift for <a href="https://x.com/waffl3k4t" target="_blank" rel="noopener noreferrer">Waffu</a>.'},
         { year: 2024, month: 10, day: 21, file: '24-10-20.png', caption: 'Chloe, Twirling' },
