@@ -1,0 +1,222 @@
+/* ===== CAROUSEL COMPONENT ===== */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 40vw; /* Auto-adjust based on viewport width */
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+    background: var(--background-secondary);
+}
+
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+}
+
+.carousel-slide {
+    flex: 0 0 100%;
+    max-width: 100%;
+    position: relative;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 40vw; /* Match container width for square aspect */
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    border-radius: var(--border-radius-lg);
+    transition: transform var(--transition-normal);
+}
+
+.carousel-slide:hover img {
+    transform: scale(1.02);
+}
+
+/* Loading state */
+.carousel-slide.loading {
+    background: var(--background-tertiary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40vw; /* Responsive height */
+}
+
+.carousel-slide.loading::after {
+    content: '';
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--accent-color);
+    border-top: 3px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Progress indicators */
+.carousel-indicators {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 2;
+}
+
+.carousel-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transition: all var(--transition-fast);
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+}
+
+.carousel-indicator.active {
+    background: var(--accent-color);
+    box-shadow: 0 0 10px rgba(255, 0, 248, 0.6);
+}
+
+/* Responsive Design */
+@media (min-width: 1400px) {
+    .carousel-container {
+        max-width: 35vw;
+    }
+    
+    .carousel-slide img {
+        height: 35vw;
+    }
+    
+    .carousel-slide.loading {
+        min-height: 35vw;
+    }
+    
+    .carousel-slide-fallback {
+        height: 35vw;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .carousel-container {
+        max-width: 400px;
+    }
+    
+    .carousel-slide img {
+        height: 400px;
+    }
+    
+    .carousel-slide.loading {
+        min-height: 400px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .carousel-container {
+        max-width: 350px;
+    }
+    
+    .carousel-slide img {
+        height: 350px;
+    }
+    
+    .carousel-slide.loading {
+        min-height: 350px;
+    }
+    
+    .carousel-indicators {
+        bottom: 10px;
+    }
+    
+    .carousel-indicator {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .carousel-container {
+        max-width: 300px;
+    }
+    
+    .carousel-slide img {
+        height: 300px;
+    }
+    
+    .carousel-slide.loading {
+        min-height: 300px;
+    }
+}
+
+/* ===== CAROUSEL FALLBACK STYLES ===== */
+.carousel-slide-fallback {
+    width: 100%;
+    height: 40vw; /* Responsive height */
+    background: var(--background-tertiary);
+    border-radius: var(--border-radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 0, 248, 0.1);
+}
+
+.fallback-content {
+    text-align: center;
+    color: var(--text-muted);
+}
+
+.fallback-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: var(--spacing-sm);
+}
+
+.fallback-text {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.carousel-slide.has-fallback {
+    opacity: 0.7;
+}
+
+/* Responsive fallback adjustments */
+@media (max-width: 991.98px) {
+    .carousel-slide-fallback {
+        height: 400px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .carousel-slide-fallback {
+        height: 350px;
+    }
+    
+    .fallback-icon {
+        font-size: 2.5rem;
+    }
+    
+    .fallback-text {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .carousel-slide-fallback {
+        height: 300px;
+    }
+    
+    .fallback-icon {
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,516 @@
+/* ===== COMICS PAGE STYLES ===== */
+
+/* Import Pixel Font for McThingies and HopE */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.pixel-font {
+    font-family: 'Press Start 2P', cursive;
+    line-height: 1.6;
+}
+
+/* ===== HERO SECTION ===== */
+.comics-hero {
+    background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%);
+    padding: 120px 0 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.comics-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 20%, rgba(255, 181, 250, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(178, 70, 233, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.comics-title {
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin: 0 0 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(135deg, #fff 0%, #ffb5fa 50%, #b246e9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.comics-subtitle {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    margin: 0;
+    font-weight: 300;
+}
+
+/* ===== COMICS CONTENT ===== */
+.comics-content {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+}
+
+/* ===== COMIC CONTAINERS ===== */
+.comic-container {
+    border-radius: 15px;
+    margin: 0 0 50px 0;
+    padding: 30px;
+    border: 3px solid;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: all var(--transition-normal);
+}
+
+.comic-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.comic-container:last-child {
+    margin-bottom: 0;
+}
+
+/* Inu-sual Feelings Styling */
+.comic-container.inusual-feelings {
+    background-color: #ebe19c;
+    border-color: #b246e9;
+}
+
+.comic-container.inusual-feelings .comic-section-title {
+    color: #b246e9;
+}
+
+.comic-container.inusual-feelings .comic-synopsis p {
+    color: #333;
+}
+
+/* McThingies Styling */
+.comic-container.mcthingies {
+    background-color: black;
+    border-color: white;
+}
+
+.comic-container.mcthingies .comic-section-title {
+    color: #fbe44f;
+}
+
+.comic-container.mcthingies .comic-synopsis p {
+    color: white;
+}
+
+/* HopE Styling */
+.comic-container.hope {
+    background-color: black;
+    border-color: white;
+}
+
+.comic-container.hope .comic-section-title {
+    color: #9b0000;
+}
+
+.comic-container.hope .comic-synopsis p {
+    color: white;
+}
+
+.comic-container.hope .comic-note {
+    color: #9b0000;
+}
+
+/* ===== COMIC LAYOUT ===== */
+.comic-row {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.comic-image-column {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.comic-content-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* ===== COMIC LOGOS ===== */
+.comic-logo {
+    width: 350px;
+    height: auto;
+    max-height: 200px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+/* Remove shadow specifically for Inu-sual Feelings logo */
+.inusual-feelings .comic-logo {
+    box-shadow: none;
+}
+
+/* McThingies and HopE logos get shadow */
+.mcthingies .comic-logo,
+.hope .comic-logo {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== SYNOPSIS SECTION ===== */
+.comic-synopsis {
+    flex: 1;
+}
+
+.comic-section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.comic-synopsis p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0 0 1rem;
+    text-align: justify;
+}
+
+.comic-synopsis p:last-child {
+    margin-bottom: 0;
+}
+
+/* Note styling for HopE */
+.comic-note {
+    font-style: italic;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+/* ===== COMIC BUTTONS ===== */
+.comic-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+}
+
+.comic-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-align: center;
+    transition: all var(--transition-normal);
+    border: 2px solid transparent;
+    cursor: pointer;
+    min-width: 120px;
+}
+
+/* Inu-sual Feelings Buttons */
+.inusual-feelings .read-btn {
+    background-color: #b246e9;
+    color: white;
+    border-color: #b246e9;
+}
+
+.inusual-feelings .read-btn:hover {
+    background-color: #ffb5fa;
+    color: #333;
+    border-color: #ffb5fa;
+}
+
+.inusual-feelings .wiki-btn {
+    background-color: transparent;
+    color: #b246e9;
+    border-color: #b246e9;
+}
+
+.inusual-feelings .wiki-btn:hover {
+    background-color: #b246e9;
+    color: white;
+}
+
+/* McThingies Buttons */
+.mcthingies-read,
+.mcthingies-wiki {
+    border-radius: 0;
+}
+
+.mcthingies-read {
+    background-color: white;
+    color: black;
+    border-color: white;
+}
+
+.mcthingies-read:hover {
+    background-color: #fbe44f;
+    color: black;
+    border-color: #fbe44f;
+}
+
+.mcthingies-wiki {
+    background-color: transparent;
+    color: white;
+    border-color: white;
+}
+
+.mcthingies-wiki:hover {
+    background-color: white;
+    color: black;
+}
+
+/* HopE Buttons */
+.hope-read,
+.hope-wiki {
+    border-radius: 0;
+}
+
+.hope-read {
+    background-color: white;
+    color: black;
+    border-color: white;
+}
+
+.hope-read:hover {
+    background-color: #9b0000;
+    color: white;
+    border-color: #9b0000;
+}
+
+.hope-wiki {
+    background-color: transparent;
+    color: white;
+    border-color: white;
+}
+
+.hope-wiki:hover {
+    background-color: white;
+    color: black;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Large desktop screens */
+@media (min-width: 1400px) {
+    .comics-title {
+        font-size: 4.5rem;
+    }
+    
+    .comics-subtitle {
+        font-size: 1.75rem;
+    }
+    
+    .comic-logo {
+        width: 400px;
+        max-height: 280px;
+    }
+}
+
+/* Tablet and small desktop */
+@media (max-width: 1199.98px) {
+    .comics-hero {
+        padding: 100px 0 60px;
+    }
+    
+    .comics-title {
+        font-size: 3.5rem;
+    }
+    
+    .comics-subtitle {
+        font-size: 1.375rem;
+    }
+    
+    .comics-content {
+        padding: 60px 0;
+    }
+    
+    .comic-container {
+        padding: 25px;
+        margin-bottom: 40px;
+    }
+    
+    .comic-row {
+        gap: 2rem;
+    }
+}
+
+/* Mobile landscape and small tablets */
+@media (max-width: 991.98px) {
+    .comics-hero {
+        padding: 80px 0 50px;
+    }
+    
+    .comics-title {
+        font-size: 3rem;
+    }
+    
+    .comics-subtitle {
+        font-size: 1.25rem;
+    }
+    
+    .comics-content {
+        padding: 50px 0;
+    }
+    
+    .comic-container {
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+    
+    .comic-row {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+    
+    .comic-image-column {
+        order: -1;
+    }
+    
+    .comic-logo {
+        width: 300px;
+        max-height: 180px;
+    }
+    
+    .comic-buttons {
+        justify-content: center;
+    }
+    
+    .comic-section-title {
+        font-size: 1.75rem;
+    }
+}
+
+/* Mobile portrait */
+@media (max-width: 575.98px) {
+    .comics-hero {
+        padding: 70px 0 40px;
+    }
+    
+    .comics-title {
+        font-size: 2.5rem;
+    }
+    
+    .comics-subtitle {
+        font-size: 1.125rem;
+    }
+    
+    .comics-content {
+        padding: 40px 0;
+    }
+    
+    .comic-container {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .comic-content-column {
+        gap: 1.5rem;
+    }
+    
+    .comic-logo {
+        width: 280px;
+        max-height: 150px;
+    }
+    
+    .comic-section-title {
+        font-size: 1.5rem;
+    }
+    
+    .comic-synopsis p {
+        font-size: 0.9rem;
+    }
+    
+    .comic-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .comic-btn {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+/* ===== ACCESSIBILITY ENHANCEMENTS ===== */
+
+/* Focus styles for keyboard navigation */
+.comic-btn:focus {
+    outline: 3px solid;
+    outline-offset: 2px;
+}
+
+.inusual-feelings .comic-btn:focus {
+    outline-color: #b246e9;
+}
+
+.mcthingies .comic-btn:focus,
+.hope .comic-btn:focus {
+    outline-color: white;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .comic-container {
+        border-width: 4px;
+    }
+    
+    .comic-btn {
+        border-width: 3px;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .comic-container,
+    .comic-btn {
+        transition: none !important;
+    }
+    
+    .comic-container:hover {
+        transform: none !important;
+    }
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+    .comics-hero {
+        background: white;
+        color: black;
+        padding: 2rem 0;
+    }
+    
+    .comics-title {
+        color: black;
+        background: none;
+        -webkit-text-fill-color: initial;
+    }
+    
+    .comic-container {
+        background: white !important;
+        border-color: #333 !important;
+        box-shadow: none;
+        page-break-inside: avoid;
+        margin-bottom: 2rem;
+    }
+    
+    .comic-container * {
+        color: black !important;
+    }
+    
+    .comic-btn {
+        border: 2px solid #333;
+        color: black !important;
+        background: white !important;
+    }
+}

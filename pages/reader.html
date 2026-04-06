@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Comic Reader - Wolno</title>
+
+	<!-- Favicon -->
+	<link rel="icon" type="image/x-icon" href="../assets/images/site/icon.jpg">
+
+	<!-- CSS Files -->
+	<link rel="stylesheet" href="../styles/global.css">
+	<link rel="stylesheet" href="../styles/components/navigation.css">
+	<link rel="stylesheet" href="../styles/components/footer.css">
+	<link rel="stylesheet" href="../styles/components/paysites.css">
+	<link rel="stylesheet" href="../styles/pages/reader.css">
+
+	<!-- Meta Tags -->
+	<meta name="description" content="Read Wolno's comics with multi-language support and flexible chapter navigation.">
+	<meta name="keywords" content="Wolno, Comics, Reader, Inu-sual Feelings, HopE, McThingies">
+	<meta name="author" content="Wolno, AwsArtzzz">
+</head>
+<body>
+	<!-- ===== SITE NAVIGATION ===== -->
+	<div data-component="navigation"></div>
+
+	<!-- ===== MAIN CONTENT ===== -->
+	<main class="main-content" id="mainContent">
+		<section class="comic-reader" id="comicReader">
+			<header class="reader-header">
+				<div class="reader-top">
+					<a class="reader-back" href="comics.html" aria-label="Back to comics overview">&larr; Back to comics</a>
+					<h1 class="reader-title" id="readerTitle">Comic reader</h1>
+					<p class="reader-summary" id="readerSummary">Choose a comic, chapter, language and display mode to start reading.</p>
+				</div>
+
+				<div class="reader-controls" id="readerControls" aria-label="Comic reader settings">
+					<div class="control-group">
+						<label for="comicSelect">Comic</label>
+						<select id="comicSelect" name="comic" aria-label="Select comic"></select>
+					</div>
+					<div class="control-group">
+						<label for="chapterSelect">Capítulo</label>
+						<select id="chapterSelect" name="chapter" aria-label="Select chapter"></select>
+					</div>
+					<div class="control-group">
+						<label for="languageSelect">Language</label>
+						<select id="languageSelect" name="language" aria-label="Select language"></select>
+					</div>
+					<div class="control-group">
+						<label for="displaySelect">Display</label>
+						<select id="displaySelect" name="display" aria-label="Select display mode">
+							<option value="chapter">Per Chapter</option>
+							<option value="all">All Pages</option>
+						</select>
+					</div>
+				</div>
+			</header>
+
+			<section class="comic-reader-display" id="comicPages" aria-live="polite"></section>
+		</section>
+	</main>
+
+	<!-- ===== FOOTER ===== -->
+	<div data-component="footer"></div>
+
+	<!-- ===== PAYSITE BUTTONS ===== -->
+	<div class="paysite-buttons"></div>
+
+	<!-- Scripts -->
+	<script src="../scripts/load-components.js"></script>
+	<script src="../scripts/comics-config.js"></script>
+	<script src="../scripts/components/comic-reader.js"></script>
+</body>
+</html>

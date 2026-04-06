@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Portfolio - Wolno</title>
+
+	<!-- Favicon -->
+	<link rel="icon" type="image/x-icon" href="../assets/images/site/icon.jpg">
+
+	<!-- CSS Files -->
+	<link rel="stylesheet" href="../styles/global.css">
+	<link rel="stylesheet" href="../styles/components/navigation.css">
+	<link rel="stylesheet" href="../styles/components/footer.css">
+	<link rel="stylesheet" href="../styles/components/paysites.css">
+	<link rel="stylesheet" href="../styles/pages/portfolio.css">
+
+	<!-- Meta Tags -->
+	<meta name="description" content="Explore Wolno's art portfolio with an interactive gallery sorted from newest to oldest pieces.">
+	<meta name="keywords" content="Wolno, Portfolio, Art Gallery, Illustrations">
+	<meta name="author" content="Wolno, AwsArtzzz">
+</head>
+<body>
+	<!-- ===== SITE NAVIGATION ===== -->
+	<div data-component="navigation"></div>
+
+	<!-- ===== MAIN CONTENT ===== -->
+	<main class="main-content" id="mainContent">
+		<section class="portfolio-section" id="portfolioSection">
+			<div class="portfolio-layout">
+				<aside class="portfolio-year-panel" aria-label="Selecciona un año para navegar">
+					<div class="year-panel-inner">
+						<h2 class="year-panel-title">Go to year</h2>
+						<ul class="year-panel-list" id="portfolioYearList"></ul>
+					</div>
+				</aside>
+
+				<div class="portfolio-groups" id="portfolioGroups" aria-live="polite"></div>
+			</div>
+		</section>
+	</main>
+
+	<!-- ===== LIGHTBOX ===== -->
+	<div class="portfolio-lightbox" id="portfolioLightbox" aria-hidden="true" role="dialog" aria-modal="true">
+		<button class="lightbox-close" type="button" aria-label="Close">&times;</button>
+		<button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous artwork">&#10094;</button>
+		<figure class="lightbox-figure">
+			<img id="lightboxImage" src="" alt="" loading="eager">
+			<figcaption class="lightbox-caption">
+				<p class="lightbox-date" id="lightboxDate"></p>
+				<p class="lightbox-description" id="lightboxDescription"></p>
+			</figcaption>
+		</figure>
+		<button class="lightbox-nav lightbox-next" type="button" aria-label="Next artwork">&#10095;</button>
+	</div>
+
+	<!-- ===== FOOTER ===== -->
+	<div data-component="footer"></div>
+
+	<!-- ===== PAYSITE BUTTONS ===== -->
+	<div class="paysite-buttons"></div>
+
+	<!-- Scripts -->
+	<script src="../scripts/load-components.js" defer></script>
+	<script src="../scripts/pages/portfolio.js" defer></script>
+</body>
+</html>

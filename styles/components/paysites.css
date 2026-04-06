@@ -1,0 +1,183 @@
+/* Floating Paysite Buttons */
+.paysite-buttons {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 1000;
+    pointer-events: none; /* Allow interaction only with buttons */
+}
+
+.paysite-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 
+        0 4px 20px rgba(0, 0, 0, 0.15),
+        0 2px 8px rgba(0, 0, 0, 0.1);
+    pointer-events: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.paysite-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+/* Patreon Button */
+.patreon-btn {
+    background: linear-gradient(135deg, 
+        rgba(255, 66, 77, 0.9) 0%, 
+        rgba(232, 58, 69, 0.9) 100%);
+    color: #ffffff;
+}
+
+.patreon-btn::before {
+    background: linear-gradient(135deg, 
+        rgba(255, 66, 77, 1) 0%, 
+        rgba(232, 58, 69, 1) 100%);
+}
+
+.patreon-btn:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 
+        0 6px 25px rgba(255, 66, 77, 0.4),
+        0 4px 12px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.patreon-btn:hover::before {
+    opacity: 1;
+}
+
+.patreon-btn:active {
+    transform: translateY(-1px) scale(1.02);
+}
+
+/* Ko-fi Button */
+.kofi-btn {
+    background: linear-gradient(135deg, 
+        rgba(255, 90, 22, 0.9) 0%, 
+        rgba(255, 122, 32, 0.9) 100%);
+    color: #ffffff;
+}
+
+.kofi-btn::before {
+    background: linear-gradient(135deg, 
+        rgba(255, 90, 22, 1) 0%, 
+        rgba(255, 122, 32, 1) 100%);
+}
+
+.kofi-btn:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 
+        0 6px 25px rgba(255, 90, 22, 0.4),
+        0 4px 12px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.kofi-btn:hover::before {
+    opacity: 1;
+}
+
+.kofi-btn:active {
+    transform: translateY(-1px) scale(1.02);
+}
+
+/* SVG Styling */
+.paysite-btn svg {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+}
+
+.paysite-btn:hover svg {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .paysite-buttons {
+        bottom: 15px;
+        left: 15px;
+        gap: 10px;
+    }
+    
+    .paysite-btn {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .paysite-btn svg {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .paysite-buttons {
+        bottom: 12px;
+        left: 12px;
+        gap: 8px;
+    }
+    
+    .paysite-btn {
+        width: 44px;
+        height: 44px;
+    }
+    
+    .paysite-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Focus styles for accessibility */
+.paysite-btn:focus {
+    outline: none;
+    box-shadow: 
+        0 0 0 3px rgba(255, 255, 255, 0.3),
+        0 4px 20px rgba(0, 0, 0, 0.15),
+        0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Animation for entrance */
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.paysite-buttons {
+    animation: slideInLeft 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.paysite-btn:nth-child(2) {
+    animation-delay: 0.1s;
+    opacity: 0;
+    animation: slideInLeft 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.1s forwards;
+}
