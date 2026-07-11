@@ -33,6 +33,13 @@ document.addEventListener('DOMContentLoaded', function() {
  * Load HTML components from files
  */
 async function loadHTMLComponents() {
+    // Browsers commonly block fetch() for local file:// URLs.
+    // In that case, JS components still render navigation/footer/paysites.
+    if (window.location.protocol === 'file:') {
+        console.warn('Skipping HTML component fetch on file:// protocol. Using JS components only.');
+        return;
+    }
+
     const basePath = getBasePath();
     const htmlComponents = [
         { selector: '[data-component="navigation"]', file: `${basePath}components/navigation.html` },
