@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Notebook - Wolno</title>
+    <link rel="icon" type="image/x-icon" href="../assets/images/site/icon.jpg">
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/components/navigation.css">
+    <link rel="stylesheet" href="../styles/components/footer.css">
+    <link rel="stylesheet" href="../styles/components/paysites.css">
+    <link rel="stylesheet" href="../styles/pages/notebook.css">
+    <meta name="description" content="The Notebook: a keepsake collection of traditional drawings of Wolno's characters by other artists.">
+</head>
+<body>
+    <div data-component="navigation"></div>
+
+    <main class="main-content notebook-page">
+        <header class="notebook-header">
+            <p class="notebook-kicker">A lovingly kept collection</p>
+            <h1>The Notebook</h1>
+            <p>Traditional drawings of my characters, made by wonderful artists.</p>
+        </header>
+
+        <section class="notebook-shell" aria-label="Guest artwork notebook">
+            <div class="notebook-toolbar">
+                <button class="notebook-index-toggle" id="notebookIndexToggle" type="button" aria-expanded="false" aria-controls="notebookIndex">Browse all drawings</button>
+                <p class="notebook-count" id="notebookCount" aria-live="polite"></p>
+            </div>
+
+            <div class="notebook-index" id="notebookIndex" hidden>
+                <div class="notebook-index-heading">
+                    <h2>Notebook index</h2>
+                    <p>Choose a drawing to open its page.</p>
+                </div>
+                <div class="notebook-index-grid" id="notebookIndexGrid"></div>
+            </div>
+
+            <div class="notebook-book" id="notebookBook">
+                <div class="notebook-pages" id="notebookPages">
+                    <article class="notebook-page-sheet notebook-info-page">
+                        <span class="tape-mark" aria-hidden="true"></span>
+                        <p class="entry-eyebrow">A drawing by</p>
+                        <h2 id="entryArtist"></h2>
+                        <dl class="entry-details">
+                            <div><dt>Date</dt><dd id="entryDate"></dd></div>
+                            <div><dt>Characters</dt><dd id="entryCharacters"></dd></div>
+                        </dl>
+                        <section class="entry-social-section" aria-labelledby="socialHeading">
+                            <h3 id="socialHeading">Find the artist</h3>
+                            <div class="entry-socials" id="entrySocials"></div>
+                        </section>
+                        <blockquote class="entry-description" id="entryDescription"></blockquote>
+                    </article>
+
+                    <article class="notebook-page-sheet notebook-art-page">
+                        <button class="notebook-art-button" id="notebookArtButton" type="button" aria-label="Open drawing in full-size view">
+                            <span class="notebook-photo-mount" id="notebookPhotoMount">
+                                <img id="notebookArtwork" src="" alt="" decoding="async">
+                                <span class="photo-corners" aria-hidden="true"></span>
+                            </span>
+                        </button>
+                        <p class="entry-number" id="entryNumber" aria-label="Notebook page"></p>
+                    </article>
+                </div>
+
+                <div class="notebook-controls">
+                    <button id="notebookPrevious" type="button" aria-label="Previous drawing"><span aria-hidden="true">&#10094;</span></button>
+                    <button id="notebookNext" type="button" aria-label="Next drawing"><span aria-hidden="true">&#10095;</span></button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="notebook-lightbox" id="notebookLightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Enlarged drawing">
+        <button class="notebook-lightbox-close" type="button" aria-label="Close enlarged drawing">&times;</button>
+        <img id="notebookLightboxImage" src="" alt="">
+    </div>
+
+    <div data-component="footer"></div>
+    <div class="paysite-buttons"></div>
+    <script src="../scripts/load-components.js" defer></script>
+    <script src="../scripts/data/notebook-data.js" defer></script>
+    <script src="../scripts/pages/notebook.js" defer></script>
+</body>
+</html>

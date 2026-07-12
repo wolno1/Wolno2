@@ -12,6 +12,7 @@ const navigationData = {
         { text: 'Comics', href: 'pages/comics.html', class: 'comics-link', ariaLabel: 'Comics and webcomics' },
         { text: 'Characters', href: 'pages/characters.html', class: 'characters-link', ariaLabel: 'Character information' },
         { text: 'Portfolio', href: 'pages/portfolio.html', class: 'portfolio-link', ariaLabel: 'Art portfolio and gallery' },
+        { text: 'Notebook', href: 'pages/notebook.html', class: 'notebook-link', ariaLabel: 'The Notebook guest art gallery' },
         { text: 'About me', href: 'pages/about.html', class: 'about-link', ariaLabel: 'About the artist' },
         { text: 'Home', href: 'index.html', class: 'home-link-nav', ariaLabel: 'Homepage' }
     ]
