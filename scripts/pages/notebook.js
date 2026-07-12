@@ -42,6 +42,15 @@
     if(entries.length<2||document.querySelector('.page-turn-overlay'))return;
     const next=(current+step+entries.length)%entries.length;
     if(matchMedia('(prefers-reduced-motion: reduce)').matches){render(next,false);return;}
+    if(matchMedia('(max-width: 760px)').matches){
+      render(next,false);
+      const pages=$('notebookPages');
+      pages.classList.remove('mobile-swap-next','mobile-swap-previous');
+      void pages.offsetWidth;
+      pages.classList.add(step>0?'mobile-swap-next':'mobile-swap-previous');
+      window.setTimeout(()=>pages.classList.remove('mobile-swap-next','mobile-swap-previous'),280);
+      return;
+    }
     const frontSelector=step>0?'.notebook-art-page':'.notebook-info-page';
     const backSelector=step>0?'.notebook-info-page':'.notebook-art-page';
     const turningPage=document.querySelector(frontSelector).cloneNode(true);
