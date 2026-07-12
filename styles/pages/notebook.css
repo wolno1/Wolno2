@@ -149,3 +149,12 @@
   .notebook-controls{padding:0 12px}
   .notebook-controls button{width:48px;height:48px}
 }
+
+/* Artwork loading state for very large source scans. */
+.notebook-art-button:after{content:'';position:absolute;inset:auto 50% 22px auto;z-index:6;padding:5px 10px;border-radius:3px;background:#f3ead1dc;color:#173f67;font-family:'Segoe Print','Comic Sans MS',cursive;font-size:.85rem;white-space:nowrap;opacity:0;pointer-events:none;transform:translateX(50%) rotate(-1deg);transition:opacity .15s ease}
+.notebook-art-button.is-loading:after{content:'Loading the next page…';opacity:1}
+.notebook-art-button.has-load-error:after{content:'This drawing could not be loaded';opacity:1;color:#8c2932}
+.notebook-art-button.is-loading .notebook-photo-mount{opacity:.18}
+.notebook-art-button.is-loading{cursor:progress}
+.notebook-photo-mount{transition:opacity .18s ease}
+@media(max-width:760px){.notebook-art-button:after{bottom:28px;font-size:.78rem}}
