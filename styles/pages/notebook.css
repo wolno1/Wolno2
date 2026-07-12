@@ -127,7 +127,7 @@
   .notebook-info-page .entry-socials a{display:inline-block;margin-right:12px;white-space:nowrap}
   .notebook-info-page .entry-description{margin:28px 0 0;font-size:1rem;line-height:1.7}
 
-  .notebook-controls{position:fixed;inset:auto 0 14px;z-index:30;display:flex;justify-content:space-between;height:auto;padding:0 18px;pointer-events:none;transform:none}
+  .notebook-controls{position:fixed;inset:auto 0 14px;z-index:30;display:flex;justify-content:center;gap:clamp(70px,28vw,120px);height:auto;padding:0;pointer-events:none;transform:none}
   .notebook-controls button{position:static;display:grid;width:52px;height:52px;border:1px solid #ffffff80;border-radius:50%;background:#171217ed;font-size:1.65rem;transform:none;box-shadow:0 6px 16px #0009;touch-action:manipulation}
   .notebook-controls button:hover,.notebook-controls button:active{transform:scale(1.05)}
 
@@ -146,7 +146,7 @@
   .notebook-info-page{padding:34px 22px 52px}
   .notebook-info-page:before{left:14px}
   .notebook-index-card img{height:112px}
-  .notebook-controls{padding:0 12px}
+  .notebook-controls{padding:0}
   .notebook-controls button{width:48px;height:48px}
 }
 
