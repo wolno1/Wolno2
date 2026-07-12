@@ -1,6 +1,9 @@
 'use strict';
 (function () {
   const PATH = '../assets/images/notebook/';
+  const DISPLAY_PATH = `${PATH}optimized/`;
+  const THUMBNAIL_PATH = `${PATH}thumbnails/`;
+  const VARIANT_VERSION = '2';
   const entries = (window.notebookEntries || []).map((e, order) => ({...e, order})).sort((a,b) => {
     if (!a.date && !b.date) return a.order-b.order;
     if (!a.date) return 1; if (!b.date) return -1;
@@ -15,7 +18,8 @@
     entries.forEach((entry,index) => {
       const button = document.createElement('button');
       button.type='button'; button.className='notebook-index-card';
-      const img=document.createElement('img'); img.src=PATH+encodeURIComponent(entry.image); img.alt=''; img.loading='lazy';
+      const img=document.createElement('img'); img.src=variantSource(entry,'thumbnail'); img.alt=''; img.loading='lazy';
+      img.onerror=()=>{img.onerror=null;img.src=artworkSource(entry.image);};
       const artist=document.createElement('span'); artist.textContent=entry.artist;
       const characters=document.createElement('small'); characters.textContent=entry.characters.join(', ');
       button.append(img,artist,characters);
@@ -73,7 +77,7 @@
     $('entryArtist').textContent=e.artist; $('entryDate').textContent=formatDate(e.date);
     $('entryCharacters').textContent=e.characters.join(', ');
     $('entryDescription').textContent=e.description||''; renderSocials(e.socials);
-    const src=PATH+encodeURIComponent(e.image), alt=`Drawing of ${e.characters.join(', ')} by ${e.artist}`;
+    const src=variantSource(e,'display'), alt=`Drawing of ${e.characters.join(', ')} by ${e.artist}`;
     loadCurrentArtwork(src,alt,index);
     document.querySelectorAll('.notebook-index-card').forEach((card,i)=>card.classList.toggle('is-current',i===index));
     history.replaceState(null,'',`${location.pathname}?drawing=${encodeURIComponent(e.id)}`);
@@ -117,9 +121,14 @@
     if(entries.length<2)return;
     [-1,1].forEach(offset=>{
       const neighbor=entries[(index+offset+entries.length)%entries.length];
-      loadArtwork(PATH+encodeURIComponent(neighbor.image)).catch(()=>{});
+      loadArtwork(variantSource(neighbor,'display')).catch(()=>{});
     });
   }
+  function variantSource(entry,variant){
+    const directory=variant==='thumbnail'?THUMBNAIL_PATH:DISPLAY_PATH;
+    return `${directory}${encodeURIComponent(entry.id)}.jpg?v=${VARIANT_VERSION}`;
+  }
+  function artworkSource(image){return encodeURI(PATH+image);}
   function sizePhotoMount(){
     const image=$('notebookArtwork'), mount=$('notebookPhotoMount'), button=$('notebookArtButton');
     if(!image.naturalWidth||!button.clientWidth)return;

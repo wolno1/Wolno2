@@ -158,3 +158,30 @@ window.notebookEntries.push({
   ],
   description: 'Counterattack I got from Sonokido in Artfight 2026!'
 });
+
+window.notebookEntries.push(
+  {
+    id: 'sono-zono',
+    image: '../wiki/gallery/inu/others/zono.png',
+    dimensions: '1674 × 1688 px',
+    artist: 'その',
+    date: '2025-04-27',
+    characters: ['Inu'],
+    socials: [
+      { label: 'Bluesky', url: 'https://bsky.app/profile/sonomsoru.bsky.social' }
+    ],
+    description: 'Commission I got from Sono!'
+  },
+  {
+    id: 'sono-zono-2',
+    image: '../wiki/gallery/inu/others/zono2.png',
+    dimensions: '695 × 1000 px',
+    artist: 'その',
+    date: '2025-07-20',
+    characters: ['Inu'],
+    socials: [
+      { label: 'Bluesky', url: 'https://bsky.app/profile/sonomsoru.bsky.social' }
+    ],
+    description: 'Commission I got from Sono!'
+  }
+);
