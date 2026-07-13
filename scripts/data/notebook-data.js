@@ -55,7 +55,7 @@ const additionalNotebookData = {
       { label: 'Twitter / X', url: 'https://x.com/sketchesJang' },
       { label: 'Instagram', url: 'https://www.instagram.com/sketchesjang/' },
       { label: 'Newgrounds', url: 'https://sketchesjang.newgrounds.com' }
-    ], description: 'Commission I got at Expofur 2025!'
+    ], description: 'Gift I got at Expofur 2025!'
   },
   'jang-2': {
     artist: 'Dreamknight JANG', date: '2026-02-21', characters: ['Inu'],
