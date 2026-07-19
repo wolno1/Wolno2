@@ -185,3 +185,45 @@ window.notebookEntries.push(
     description: 'Commission I got from Sono!'
   }
 );
+
+window.notebookEntries.push(
+  {
+    id: 'jang-3', image: 'Jang3.png', dimensions: '3588 × 5196 px',
+    artist: 'Dreamknight JANG', date: '2026-07-18',
+    characters: ['Inu', 'Cream The Rabbit'],
+    socials: [
+      { label: 'Twitter / X', url: 'https://x.com/sketchesJang' },
+      { label: 'Instagram', url: 'https://www.instagram.com/sketchesjang/' },
+      { label: 'Newgrounds', url: 'https://sketchesjang.newgrounds.com' }
+    ],
+    description: 'Gift I got at Animex 2026!'
+  },
+  {
+    id: 'gigazep0', image: 'gigazep0.png', dimensions: '2556 × 3180 px',
+    artist: 'Gigazep0', date: '2026-07-18', characters: ['Inu'],
+    socials: [
+      { label: 'Instagram', url: 'https://www.instagram.com/gigazep0' },
+      { label: 'X / Twitter', url: 'https://x.com/gigazep0' },
+      { label: 'TikTok', url: 'https://www.tiktok.com/@gigazep0' }
+    ],
+    description: 'Commission I got at the Animex 2026! I was so excited to commission Gigazep0, I was planning this for months! Right after I got into the con I rushed into her stand!'
+  },
+  {
+    id: 'skizz-art', image: 'skizz.artt2.png', dimensions: '4360 × 3480 px',
+    artist: 'Skizz.Art', date: '2026-07-18', characters: ['Inu'],
+    socials: [
+      { label: 'Instagram', url: 'https://www.instagram.com/skizz.artt/' }
+    ],
+    description: 'Commission I got at the Animex 2026! Skizz blew my mind with this commission, some time later after I asked for the commission I passed by his stand and saw my commission ready and exhibited, I couldn\'t help but to smile like an idiot, it was embarrassing to know Skizz noticed it!'
+  },
+  {
+    id: 'viky-arte-perron', image: 'viky.arte_perron.png', dimensions: '3300 × 5064 px',
+    artist: 'Viky.arte_perron', date: '2026-07-18', characters: ['Inu'],
+    socials: [
+      { label: 'Instagram', url: 'https://www.instagram.com/viky.arte_perron/' },
+      { label: 'TikTok', url: 'https://www.tiktok.com/@viky.arte_perron' },
+      { label: 'Threads', url: 'https://www.threads.com/@viky.arte_perron' }
+    ],
+    description: 'Commission I got at the Animex 2026! Viky made a beautiful job with this commission! I knew she was going to since she showed me some previous commissions, she is super talented!'
+  }
+);

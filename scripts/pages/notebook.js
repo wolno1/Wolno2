@@ -3,7 +3,7 @@
   const PATH = '../assets/images/notebook/';
   const DISPLAY_PATH = `${PATH}optimized/`;
   const THUMBNAIL_PATH = `${PATH}thumbnails/`;
-  const VARIANT_VERSION = '2';
+  const VARIANT_VERSION = '3';
   const entries = (window.notebookEntries || []).map((e, order) => ({...e, order})).sort((a,b) => {
     if (!a.date && !b.date) return a.order-b.order;
     if (!a.date) return 1; if (!b.date) return -1;
@@ -29,6 +29,7 @@
     $('notebookPrevious').addEventListener('click',()=>move(-1));
     $('notebookNext').addEventListener('click',()=>move(1));
     $('notebookIndexToggle').addEventListener('click',()=>setIndex($('notebookIndex').hidden));
+    $('notebookShareButton').addEventListener('click',copyShareLink);
     $('notebookArtButton').addEventListener('click',openLightbox);
     document.querySelector('.notebook-lightbox-close').addEventListener('click',closeLightbox);
     $('notebookLightbox').addEventListener('click',e=>{if(e.target===$('notebookLightbox')) closeLightbox();});
@@ -141,6 +142,19 @@
   }
   function renderSocials(items){const box=$('entrySocials'); box.replaceChildren(); if(!items.length){box.textContent='SOCIAL LINKS TO EDIT';return;} items.forEach(s=>{const a=document.createElement('a');a.href=s.url;a.textContent=s.label;a.target='_blank';a.rel='noopener noreferrer';box.append(a);});}
   function setIndex(open){$('notebookIndex').hidden=!open;$('notebookIndexToggle').setAttribute('aria-expanded',String(open));}
+  async function copyShareLink(){
+    const entry=entries[current];
+    const url=new URL(`notebook-share/${encodeURIComponent(entry.id)}.html`,location.href).href;
+    const button=$('notebookShareButton');
+    try{
+      if(navigator.clipboard&&window.isSecureContext)await navigator.clipboard.writeText(url);
+      else{
+        const input=document.createElement('textarea');input.value=url;input.setAttribute('readonly','');input.style.position='fixed';input.style.opacity='0';document.body.append(input);input.select();document.execCommand('copy');input.remove();
+      }
+      button.textContent='Link copied!';
+    }catch(error){button.textContent='Could not copy';}
+    window.setTimeout(()=>{button.textContent='Copy share link';},1800);
+  }
   function openLightbox(){if($('notebookArtButton').classList.contains('is-loading'))return;lastFocus=document.activeElement;$('notebookLightbox').classList.add('is-open');$('notebookLightbox').setAttribute('aria-hidden','false');document.body.classList.add('notebook-modal-open');document.querySelector('.notebook-lightbox-close').focus();}
   function closeLightbox(){$('notebookLightbox').classList.remove('is-open');$('notebookLightbox').setAttribute('aria-hidden','true');document.body.classList.remove('notebook-modal-open');if(lastFocus)lastFocus.focus();}
   function formatDate(date){if(!date)return'DATE TO EDIT';const parsed=new Date(`${date}T00:00:00`);return Number.isNaN(parsed.getTime())?date:new Intl.DateTimeFormat('en-GB',{year:'2-digit',month:'2-digit',day:'2-digit'}).format(parsed);}
