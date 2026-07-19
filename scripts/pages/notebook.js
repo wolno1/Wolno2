@@ -79,6 +79,9 @@
     $('entryCharacters').textContent=e.characters.join(', ');
     $('entryDescription').textContent=e.description||''; renderSocials(e.socials);
     const src=variantSource(e,'display'), alt=`Drawing of ${e.characters.join(', ')} by ${e.artist}`;
+    const originalSrc=artworkSource(e.image), downloadButton=$('notebookDownloadButton');
+    downloadButton.href=originalSrc;
+    downloadButton.setAttribute('aria-label',`Open the full-size drawing by ${e.artist}`);
     loadCurrentArtwork(src,alt,index);
     document.querySelectorAll('.notebook-index-card').forEach((card,i)=>card.classList.toggle('is-current',i===index));
     history.replaceState(null,'',`${location.pathname}?drawing=${encodeURIComponent(e.id)}`);
