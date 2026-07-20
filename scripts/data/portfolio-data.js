@@ -3026,7 +3026,6 @@ window.portfolioItems =
                      "OC",
                      "Inu-sual Feelings",
                      "Fanart",
-                     "Bulletin Board Art",
                  ]
     },
     {
