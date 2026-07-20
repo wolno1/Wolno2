@@ -27,15 +27,31 @@
 	<!-- ===== MAIN CONTENT ===== -->
 	<main class="main-content" id="mainContent">
 		<section class="portfolio-section" id="portfolioSection">
+			<header class="portfolio-intro">
+				<h1 class="portfolio-title">Portfolio</h1>
+				<p class="portfolio-summary">Browse my work by collection, subject, and medium.</p>
+			</header>
 			<div class="portfolio-layout">
-				<aside class="portfolio-year-panel" aria-label="Selecciona un año para navegar">
-					<div class="year-panel-inner">
-						<h2 class="year-panel-title">Go to year</h2>
-						<ul class="year-panel-list" id="portfolioYearList"></ul>
+				<aside class="portfolio-filter-panel" aria-label="Filter portfolio">
+					<div class="filter-panel-inner">
+						<fieldset class="filter-group filter-mode-group">
+							<legend>Show</legend>
+							<label class="filter-option"><input type="radio" name="portfolioMode" value="best" checked><span>Best works</span></label>
+							<label class="filter-option"><input type="radio" name="portfolioMode" value="all"><span>All</span></label>
+						</fieldset>
+						<fieldset class="filter-group">
+							<legend>Filter by tag</legend>
+							<div class="filter-checkboxes" id="portfolioTagFilters"></div>
+						</fieldset>
+						<button class="filter-clear" id="portfolioClearFilters" type="button">Clear tag filters</button>
 					</div>
 				</aside>
 
-				<div class="portfolio-groups" id="portfolioGroups" aria-live="polite"></div>
+				<div class="portfolio-results">
+					<p class="portfolio-result-count" id="portfolioResultCount" aria-live="polite"></p>
+					<div class="portfolio-grid" id="portfolioGrid"></div>
+					<p class="portfolio-empty" id="portfolioEmpty" hidden>No artwork matches these filters.</p>
+				</div>
 			</div>
 		</section>
 	</main>
@@ -62,6 +78,7 @@
 
 	<!-- Scripts -->
 	<script src="../scripts/load-components.js" defer></script>
+	<script src="../scripts/data/portfolio-data.js" defer></script>
 	<script src="../scripts/pages/portfolio.js" defer></script>
 </body>
 </html>

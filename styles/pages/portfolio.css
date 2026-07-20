@@ -484,3 +484,166 @@ body.portfolio-lightbox-open {
         font-size: 0.95rem;
     }
 }
+
+/* Tagged portfolio filters */
+.portfolio-filter-panel,
+.portfolio-year-panel {
+    position: sticky;
+    top: calc(70px + var(--spacing-lg));
+    align-self: start;
+    z-index: 5;
+}
+
+.filter-panel-inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-xl) var(--spacing-lg);
+    border: 1px solid rgba(255, 0, 248, 0.25);
+    border-radius: var(--border-radius-xl);
+    background: rgba(17, 17, 17, 0.9);
+    box-shadow: var(--shadow-md);
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.filter-group legend {
+    width: 100%;
+    margin-bottom: var(--spacing-sm);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+}
+
+.filter-mode-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.filter-mode-group legend {
+    grid-column: 1 / -1;
+}
+
+.filter-checkboxes {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.filter-option {
+    position: relative;
+    display: flex;
+    cursor: pointer;
+}
+
+.filter-option input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+.filter-option span {
+    width: 100%;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border: 1px solid rgba(255, 0, 248, 0.2);
+    border-radius: var(--border-radius-md);
+    color: var(--text-secondary);
+    background: rgba(26, 26, 26, 0.7);
+    transition: color var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.filter-option:hover span,
+.filter-option input:focus-visible + span {
+    color: var(--text-primary);
+    border-color: rgba(255, 0, 248, 0.65);
+}
+
+.filter-option input:checked + span {
+    color: var(--accent-color);
+    border-color: rgba(255, 0, 248, 0.6);
+    background: rgba(255, 0, 248, 0.18);
+    box-shadow: 0 0 10px rgba(255, 0, 248, 0.2);
+}
+
+.filter-clear {
+    padding: var(--spacing-sm);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--border-radius-md);
+    color: var(--text-secondary);
+    background: transparent;
+    font: inherit;
+    cursor: pointer;
+}
+
+.filter-clear:hover,
+.filter-clear:focus-visible {
+    color: var(--text-primary);
+    border-color: rgba(255, 0, 248, 0.6);
+    outline: none;
+}
+
+.portfolio-results {
+    min-width: 0;
+}
+
+.portfolio-result-count {
+    margin: 0 0 var(--spacing-md);
+    color: var(--text-secondary);
+    text-align: right;
+}
+
+.portfolio-results .portfolio-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xxl);
+}
+
+.portfolio-year-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.portfolio-grid[hidden] {
+    display: none;
+}
+
+@media (max-width: 991.98px) {
+    .portfolio-filter-panel,
+    .portfolio-year-panel {
+        position: static;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .filter-panel-inner {
+        padding: var(--spacing-md);
+    }
+
+    .filter-checkboxes {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .portfolio-year-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--spacing-sm);
+    }
+}
+
+@media (max-width: 479.98px) {
+    .filter-checkboxes {
+        grid-template-columns: 1fr;
+    }
+}
