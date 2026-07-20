@@ -647,3 +647,346 @@ body.portfolio-lightbox-open {
         grid-template-columns: 1fr;
     }
 }
+
+/* Compact filter chips and year navigation */
+.portfolio-layout {
+    grid-template-columns: minmax(260px, 310px) minmax(0, 1fr);
+}
+
+.filter-panel-inner {
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    background: linear-gradient(155deg, rgba(28, 19, 30, 0.97), rgba(12, 12, 12, 0.96));
+    backdrop-filter: blur(12px);
+}
+
+.filter-checkboxes {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 0.45rem;
+}
+
+.filter-checkboxes .filter-option span {
+    width: auto;
+    padding: 0.42rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    line-height: 1.15;
+}
+
+.filter-checkboxes .filter-option input:checked + span::before {
+    content: "✓ ";
+}
+
+.filter-mode-group {
+    gap: 0.4rem;
+    padding: 0.3rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius-lg);
+    background: rgba(0, 0, 0, 0.28);
+}
+
+.filter-mode-group legend {
+    padding: 0 0.25rem;
+}
+
+.filter-mode-group .filter-option span {
+    text-align: center;
+    border-color: transparent;
+    background: transparent;
+}
+
+.filter-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.filter-clear {
+    padding: 0.35rem 0.65rem;
+    font-size: 0.82rem;
+}
+
+.year-jump {
+    padding-top: var(--spacing-md);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.year-jump-title {
+    margin: 0 0 var(--spacing-sm);
+    color: var(--text-secondary);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.year-jump-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.4rem;
+}
+
+.year-jump-button {
+    padding: 0.42rem 0.3rem;
+    border: 1px solid rgba(255, 0, 248, 0.22);
+    border-radius: var(--border-radius-md);
+    color: var(--text-secondary);
+    background: rgba(255, 255, 255, 0.035);
+    font: inherit;
+    font-size: 0.82rem;
+    cursor: pointer;
+    transition: color var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.year-jump-button:hover,
+.year-jump-button:focus-visible {
+    color: var(--text-primary);
+    border-color: var(--accent-color);
+    background: rgba(255, 0, 248, 0.12);
+    outline: none;
+}
+
+.portfolio-year-group {
+    content-visibility: auto;
+    contain-intrinsic-size: 700px;
+}
+
+.portfolio-year-group.is-highlighted .portfolio-year-heading {
+    color: var(--accent-color);
+    text-shadow: 0 0 12px rgba(255, 0, 248, 0.45);
+}
+
+@media (max-width: 991.98px) {
+    .portfolio-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .year-jump-list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .year-jump-button {
+        min-width: 4.4rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .filter-checkboxes {
+        display: flex;
+    }
+
+    .filter-panel-inner {
+        padding: var(--spacing-md);
+    }
+}
+
+.mobile-filter-toggle {
+    display: none;
+}
+
+@media (max-width: 767.98px) {
+    .portfolio-section {
+        padding: var(--spacing-md) var(--spacing-sm) var(--spacing-xl);
+    }
+
+    .portfolio-intro {
+        margin-bottom: var(--spacing-md);
+    }
+
+    .portfolio-title {
+        margin-bottom: 0.25rem;
+        font-size: clamp(1.8rem, 9vw, 2.35rem);
+    }
+
+    .portfolio-summary {
+        font-size: 0.9rem;
+    }
+
+    .portfolio-filter-panel {
+        position: sticky;
+        top: calc(60px + 0.35rem);
+        width: 100%;
+        z-index: 30;
+    }
+
+    .mobile-filter-toggle {
+        display: flex;
+        width: 100%;
+        min-height: 48px;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.65rem 0.85rem;
+        border: 1px solid rgba(255, 0, 248, 0.42);
+        border-radius: var(--border-radius-lg);
+        color: var(--text-primary);
+        background: rgba(18, 14, 19, 0.96);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+        backdrop-filter: blur(14px);
+        font: inherit;
+        font-weight: 700;
+        cursor: pointer;
+    }
+
+    .mobile-filter-toggle::after {
+        content: "⌄";
+        margin-left: 0.55rem;
+        color: var(--accent-color);
+        font-size: 1.2rem;
+        transition: transform var(--transition-fast);
+    }
+
+    .mobile-filter-toggle[aria-expanded="true"]::after {
+        transform: rotate(180deg);
+    }
+
+    .mobile-filter-count {
+        min-width: 2rem;
+        margin-left: auto;
+        padding: 0.15rem 0.45rem;
+        border-radius: 999px;
+        color: var(--accent-color);
+        background: rgba(255, 0, 248, 0.14);
+        font-size: 0.78rem;
+        text-align: center;
+    }
+
+    .portfolio-filter-panel .filter-panel-inner {
+        position: absolute;
+        top: calc(100% + 0.4rem);
+        left: 0;
+        right: 0;
+        display: none;
+        max-height: min(70vh, 560px);
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        border-radius: var(--border-radius-lg);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.65);
+    }
+
+    .portfolio-filter-panel .filter-panel-inner.is-open {
+        display: flex;
+    }
+
+    .filter-checkboxes .filter-option span {
+        min-height: 38px;
+        display: inline-flex;
+        align-items: center;
+        padding-inline: 0.75rem;
+    }
+
+    .year-jump-list {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 0.35rem;
+        scrollbar-width: thin;
+        scroll-snap-type: x proximity;
+    }
+
+    .year-jump-button {
+        flex: 0 0 auto;
+        min-width: 4.75rem;
+        min-height: 40px;
+        scroll-snap-align: start;
+    }
+
+    .portfolio-result-count {
+        margin-bottom: var(--spacing-sm);
+        font-size: 0.8rem;
+    }
+
+    .portfolio-results .portfolio-grid {
+        gap: var(--spacing-xl);
+    }
+
+    .portfolio-year-group {
+        gap: var(--spacing-sm);
+        scroll-margin-top: 124px;
+    }
+
+    .portfolio-year-heading {
+        position: sticky;
+        top: 116px;
+        z-index: 4;
+        width: max-content;
+        padding: 0.25rem 0.65rem;
+        border-left: 3px solid var(--accent-color);
+        border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
+        background: rgba(10, 10, 10, 0.88);
+        backdrop-filter: blur(8px);
+        font-size: 1.35rem;
+    }
+
+    .portfolio-year-grid {
+        gap: 0.5rem;
+    }
+
+    .portfolio-item-button {
+        border-radius: var(--border-radius-md);
+    }
+
+    .portfolio-item-button:hover,
+    .portfolio-item-button:focus {
+        transform: none;
+    }
+
+    .portfolio-item-button::after {
+        left: 0.4rem;
+        right: 0.4rem;
+        bottom: 0.4rem;
+        transform: none;
+        padding: 0.3rem 0.4rem;
+        overflow: hidden;
+        opacity: 1;
+        border-radius: var(--border-radius-sm);
+        font-size: 0.67rem;
+        text-align: center;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .portfolio-item-button:hover::after,
+    .portfolio-item-button:focus::after {
+        transform: none;
+    }
+
+    .portfolio-lightbox {
+        padding: 4.25rem 0.65rem 5.25rem;
+    }
+
+    .lightbox-close {
+        top: 0.7rem;
+        right: 0.7rem;
+    }
+
+    .lightbox-figure {
+        width: 100%;
+        max-height: 100%;
+        gap: 0.65rem;
+    }
+
+    .lightbox-figure img {
+        max-height: 66vh;
+    }
+
+    .lightbox-caption {
+        max-height: 18vh;
+        overflow-y: auto;
+    }
+
+    .lightbox-nav {
+        bottom: 0.8rem;
+        width: 52px;
+        height: 52px;
+    }
+}
+
+@media (max-width: 380px) {
+    .portfolio-year-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-item-button {
+        aspect-ratio: 4 / 3;
+    }
+}

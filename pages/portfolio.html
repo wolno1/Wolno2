@@ -33,7 +33,11 @@
 			</header>
 			<div class="portfolio-layout">
 				<aside class="portfolio-filter-panel" aria-label="Filter portfolio">
-					<div class="filter-panel-inner">
+					<button class="mobile-filter-toggle" id="portfolioFilterToggle" type="button" aria-expanded="false" aria-controls="portfolioFilterPanel">
+						<span>Filters &amp; years</span>
+						<span class="mobile-filter-count" id="portfolioMobileCount"></span>
+					</button>
+					<div class="filter-panel-inner" id="portfolioFilterPanel">
 						<fieldset class="filter-group filter-mode-group">
 							<legend>Show</legend>
 							<label class="filter-option"><input type="radio" name="portfolioMode" value="best" checked><span>Best works</span></label>
@@ -43,7 +47,13 @@
 							<legend>Filter by tag</legend>
 							<div class="filter-checkboxes" id="portfolioTagFilters"></div>
 						</fieldset>
-						<button class="filter-clear" id="portfolioClearFilters" type="button">Clear tag filters</button>
+						<div class="filter-actions">
+							<button class="filter-clear" id="portfolioClearFilters" type="button">Clear tags</button>
+						</div>
+						<nav class="year-jump" aria-label="Jump to portfolio year">
+							<p class="year-jump-title">Jump to year</p>
+							<div class="year-jump-list" id="portfolioYearJump"></div>
+						</nav>
 					</div>
 				</aside>
 

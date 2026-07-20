@@ -22,9 +22,14 @@
         const count = document.getElementById('portfolioResultCount');
         const empty = document.getElementById('portfolioEmpty');
         const clear = document.getElementById('portfolioClearFilters');
+        const yearJump = document.getElementById('portfolioYearJump');
+        const filterToggle = document.getElementById('portfolioFilterToggle');
+        const filterPanel = document.getElementById('portfolioFilterPanel');
+        const mobileCount = document.getElementById('portfolioMobileCount');
         const lightbox = document.getElementById('portfolioLightbox');
 
-        if (!grid || !filters || !count || !empty || !clear || !lightbox) return;
+        if (!grid || !filters || !count || !empty || !clear || !yearJump ||
+            !filterToggle || !filterPanel || !mobileCount || !lightbox) return;
 
         const state = {
             items: buildItems(Array.isArray(window.portfolioItems) ? window.portfolioItems : []),
@@ -36,21 +41,23 @@
             keyListener: null
         };
 
-        renderFilterOptions(filters, state, () => renderGallery(grid, count, empty, state));
+        const render = () => renderGallery(grid, count, empty, yearJump, mobileCount, state);
+        renderFilterOptions(filters, state, render);
+        setupMobileFilters(filterToggle, filterPanel);
         document.querySelectorAll('input[name="portfolioMode"]').forEach((input) => {
             input.addEventListener('change', () => {
                 if (input.checked) state.mode = input.value;
-                renderGallery(grid, count, empty, state);
+                render();
             });
         });
         clear.addEventListener('click', () => {
             state.selectedTags.clear();
             filters.querySelectorAll('input').forEach((input) => { input.checked = false; });
-            renderGallery(grid, count, empty, state);
+            render();
         });
 
         setupLightbox(lightbox, state);
-        renderGallery(grid, count, empty, state);
+        render();
     });
 
     function buildItems(rawItems) {
@@ -68,6 +75,7 @@
                 dateValue,
                 displayDate: dateValue ? formatter.format(new Date(dateValue)) : 'Date to edit',
                 src: encodeURI(`../assets/images/portfolio/${item.file}`),
+                thumbnailSrc: encodeURI(`../assets/images/portfolio-thumbnails/${item.file.split('/').pop().replace(/\.[^.]+$/, '.jpg')}`),
                 alt: item.alt || `Portfolio artwork from ${item.date || 'an unknown date'}`,
                 description: item.description || 'Description to edit.',
                 tags: Array.isArray(item.tags) ? item.tags : []
@@ -94,7 +102,7 @@
         });
     }
 
-    function renderGallery(grid, count, empty, state) {
+    function renderGallery(grid, count, empty, yearJump, mobileCount, state) {
         state.visibleItems = state.items.filter((item) => {
             const matchesMode = state.mode === 'all' || item.tags.includes(BEST_TAG);
             const matchesTags = state.selectedTags.size === 0 ||
@@ -113,6 +121,7 @@
         years.forEach((entries, year) => {
             const group = document.createElement('section');
             group.className = 'portfolio-year-group';
+            group.id = `portfolio-year-group-${year}`;
             group.setAttribute('aria-labelledby', `portfolio-year-${year}`);
 
             const heading = document.createElement('h2');
@@ -132,10 +141,11 @@
                 button.setAttribute('aria-label', `Open artwork from ${item.displayDate}`);
                 button.addEventListener('click', () => openLightbox(state, index, button));
                 const image = document.createElement('img');
-                image.src = item.src;
+                image.src = item.thumbnailSrc;
                 image.alt = item.alt;
                 image.loading = 'lazy';
                 image.decoding = 'async';
+                image.fetchPriority = index < 8 ? 'high' : 'low';
                 button.appendChild(image);
                 figure.appendChild(button);
                 yearGrid.appendChild(figure);
@@ -145,10 +155,53 @@
             grid.appendChild(group);
         });
 
+        renderYearJump(yearJump, years);
+
         const total = state.visibleItems.length;
         count.textContent = `${total} ${total === 1 ? 'artwork' : 'artworks'}`;
+        mobileCount.textContent = String(total);
         empty.hidden = total !== 0;
         grid.hidden = total === 0;
+    }
+
+    function setupMobileFilters(toggle, panel) {
+        const close = () => {
+            toggle.setAttribute('aria-expanded', 'false');
+            panel.classList.remove('is-open');
+        };
+
+        toggle.addEventListener('click', () => {
+            const willOpen = toggle.getAttribute('aria-expanded') !== 'true';
+            toggle.setAttribute('aria-expanded', String(willOpen));
+            panel.classList.toggle('is-open', willOpen);
+        });
+
+        panel.addEventListener('click', (event) => {
+            if (event.target.closest('.year-jump-button')) close();
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 767) close();
+        });
+    }
+
+    function renderYearJump(container, years) {
+        container.replaceChildren();
+        years.forEach((entries, year) => {
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.className = 'year-jump-button';
+            button.textContent = year;
+            button.setAttribute('aria-label', `Jump to ${year}, ${entries.length} artworks`);
+            button.addEventListener('click', () => {
+                const target = document.getElementById(`portfolio-year-group-${year}`);
+                if (!target) return;
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                target.classList.add('is-highlighted');
+                window.setTimeout(() => target.classList.remove('is-highlighted'), 1200);
+            });
+            container.appendChild(button);
+        });
     }
 
     function setupLightbox(lightbox, state) {

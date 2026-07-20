@@ -1,2 +1,3 @@
 scripts/generate-notebook-images.ps1
 scripts/generate-notebook-share-pages.js
+scripts/generate-portfolio-thumbnails.ps1
