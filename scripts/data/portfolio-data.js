@@ -7,27 +7,20 @@ window.portfolioItems =
     {
         "file":  "2026/2026-07-16.png",
         "date":  "2026-07-16",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Mischa, ArtFight attack for <a href=\"https://x.com/im_M0rd3kAi\" target=\"_blank\" rel=\"noopener noreferrer\">Iiiskender</a>.",
         "alt":  "Artwork from 2026-07-16",
         "tags":  [
                      "Best works",
                      "Digital Art",
-                     "Traditional Art",
-                     "OC",
-                     "Inu-sual Feelings",
-                     "Hop-E",
                      "ArtFight",
                      "Other\u0027s OCs",
                      "Fanart",
-                     "Splatoon",
-                     "Bulletin Board Art",
-                     "Commissions",
                  ]
     },
     {
         "file":  "2026/2026-07-13.png",
         "date":  "2026-07-13",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Mischa, ArtFight attack for <a href=\"https://x.com/JoeiRabito\" target=\"_blank\" rel=\"noopener noreferrer\">Rabito</a>.",
         "alt":  "Artwork from 2026-07-13",
         "tags":  [
                      "Digital Art",
@@ -39,7 +32,7 @@ window.portfolioItems =
     {
         "file":  "2026/2026-07-12.png",
         "date":  "2026-07-12",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Mocha, ArtFight attack for <a href=\"https://x.com/ItsNekoamai\" target=\"_blank\" rel=\"noopener noreferrer\">Nekoamai</a>.",
         "alt":  "Artwork from 2026-07-12",
         "tags":  [
                      "Best works",
@@ -52,7 +45,7 @@ window.portfolioItems =
     {
         "file":  "2026/2026-07-11.png",
         "date":  "2026-07-11",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Cora, ArtFight attack for <a href=\"https://bsky.app/profile/jawidev.bsky.social\" target=\"_blank\" rel=\"noopener noreferrer\">JawiDev</a>.",
         "alt":  "Artwork from 2026-07-11",
         "tags":  [
                      "Digital Art",
@@ -64,7 +57,7 @@ window.portfolioItems =
     {
         "file":  "2026/2026-07-09.png",
         "date":  "2026-07-09",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Cora, ArtFight attack for <a href=\"https://x.com/bearsockz\" target=\"_blank\" rel=\"noopener noreferrer\">Bearsockz</a>.",
         "alt":  "Artwork from 2026-07-09",
         "tags":  [
                      "Best works",
@@ -77,7 +70,7 @@ window.portfolioItems =
     {
         "file":  "2026/2026-07-08 1.png",
         "date":  "2026-07-08",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Topaz, ArtFight attack for <a href=\"https://x.com/menthaam\" target=\"_blank\" rel=\"noopener noreferrer\">Menthaam</a>.",
         "alt":  "Artwork from 2026-07-08",
         "tags":  [
                      "Best works",
@@ -90,7 +83,7 @@ window.portfolioItems =
     {
         "file":  "2026/2026-07-08 2.png",
         "date":  "2026-07-08",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Mystik, ArtFight attack for <a href=\"https://x.com/tartifondue\" target=\"_blank\" rel=\"noopener noreferrer\">Acinaces</a>.",
         "alt":  "Artwork from 2026-07-08",
         "tags":  [
                      "Digital Art",
@@ -102,7 +95,7 @@ window.portfolioItems =
     {
         "file":  "2026/2026-07-08 3.png",
         "date":  "2026-07-08",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Patty, ArtFight attack for <a href=\"https://x.com/artRollingBox\" target=\"_blank\" rel=\"noopener noreferrer\">RollingBox</a>.",
         "alt":  "Artwork from 2026-07-08",
         "tags":  [
                      "Digital Art",
@@ -114,7 +107,7 @@ window.portfolioItems =
     {
         "file":  "2026/2026-07-06.png",
         "date":  "2026-07-06",
-        "description":  "Description to edit.",
+        "descriptionHtml": "PKBunny, ArtFight attack for <a href=\"https://x.com/Psibunny\" target=\"_blank\" rel=\"noopener noreferrer\">PKBunny</a>.",
         "alt":  "Artwork from 2026-07-06",
         "tags":  [
                      "Digital Art",
@@ -126,7 +119,7 @@ window.portfolioItems =
     {
         "file":  "2026/2026-07-05 1.png",
         "date":  "2026-07-05",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Paige, ArtFight attack for <a href=\"https://x.com/cat_citrus\" target=\"_blank\" rel=\"noopener noreferrer\">Citrus Cat</a>.",
         "alt":  "Artwork from 2026-07-05",
         "tags":  [
                      "Best works",

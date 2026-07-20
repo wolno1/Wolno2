@@ -218,7 +218,11 @@
             if (!item) return;
             image.src = item.src;
             image.alt = item.alt;
-            description.textContent = item.description;
+            if (item.descriptionHtml) {
+                description.innerHTML = item.descriptionHtml;
+            } else {
+                description.textContent = item.description;
+            }
             date.textContent = item.displayDate;
             const disabled = state.visibleItems.length <= 1;
             previous.disabled = disabled;
