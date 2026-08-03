@@ -5,6 +5,70 @@
 window.portfolioItems = 
 [
     {
+        "file":  "2026/2026-08-02.png",
+        "date":  "2026-08-02",
+        "descriptionHtml": "Bad Influence, ArtFight attack for <a href=\"https://x.com/TheBlackHex\" target=\"_blank\" rel=\"noopener noreferrer\">Hex</a>.",
+        "alt":  "Artwork from 2026-08-02",
+        "tags":  [
+                     "Best works",
+                     "Digital Art",
+                     "ArtFight",
+                     "Other\u0027s OCs",
+                     "Fanart",
+                 ]
+    },
+    {
+        "file":  "2026/2026-07-28.png",
+        "date":  "2026-07-28",
+        "descriptionHtml": "Max, ArtFight attack for <a href=\"https://www.instagram.com/taxaxe/\" target=\"_blank\" rel=\"noopener noreferrer\">Taxaxe</a>.",
+        "alt":  "Artwork from 2026-07-28",
+        "tags":  [
+                     "Best works",
+                     "Traditional Art",
+                     "ArtFight",
+                     "Other\u0027s OCs",
+                     "Fanart",
+                 ]
+    },
+    {
+        "file":  "2026/2026-07-26 2.png",
+        "date":  "2026-07-26",
+        "descriptionHtml": "Zoe, ArtFight attack for <a href=\"https://x.com/sketchesJang\" target=\"_blank\" rel=\"noopener noreferrer\">Dreamknight JANG</a>.",
+        "alt":  "Artwork from 2026-07-26",
+        "tags":  [
+                     "Best works",
+                     "Digital Art",
+                     "ArtFight",
+                     "Other\u0027s OCs",
+                     "Fanart",
+                 ]
+    },
+    {
+        "file":  "2026/2026-07-26 1.png",
+        "date":  "2026-07-26",
+        "descriptionHtml": "Fen, ArtFight attack for <a href=\"https://x.com/BubblesZap_\" target=\"_blank\" rel=\"noopener noreferrer\">Fen</a>.",
+        "alt":  "Artwork from 2026-07-26",
+        "tags":  [
+                     "Digital Art",
+                     "ArtFight",
+                     "Other\u0027s OCs",
+                     "Fanart",
+                 ]
+    },
+    {
+        "file":  "2026/2026-07-25.png",
+        "date":  "2026-07-26",
+        "descriptionHtml": "Nanaba, ArtFight attack for <a href=\"https://x.com/waffl3k4t\" target=\"_blank\" rel=\"noopener noreferrer\">Waffu</a>.",
+        "alt":  "Artwork from 2026-07-26",
+        "tags":  [
+                     "Best works",
+                     "Digital Art",
+                     "ArtFight",
+                     "Other\u0027s OCs",
+                     "Fanart",
+                 ]
+    },
+    {
         "file":  "2026/2026-07-16.png",
         "date":  "2026-07-16",
         "descriptionHtml": "Mischa, ArtFight attack for <a href=\"https://x.com/im_M0rd3kAi\" target=\"_blank\" rel=\"noopener noreferrer\">Iiiskender</a>.",
@@ -132,7 +196,7 @@ window.portfolioItems =
     {
         "file":  "2026/2026-07-05 2.png",
         "date":  "2026-07-05",
-        "description":  "Description to edit.",
+        "description":  "Olivia! Background Inu-sual Feelings character.",
         "alt":  "Artwork from 2026-07-05",
         "tags":  [
                      "Best works",
@@ -144,7 +208,7 @@ window.portfolioItems =
     {
         "file":  "2026/2026-07-04.png",
         "date":  "2026-07-04",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Kozeni, ArtFight attack for <a href=\"https://x.com/leisdum\" target=\"_blank\" rel=\"noopener noreferrer\">Kemonotabi</a>.",
         "alt":  "Artwork from 2026-07-04",
         "tags":  [
                      "Digital Art",
@@ -156,7 +220,7 @@ window.portfolioItems =
     {
         "file":  "2026/2026-07-02 1.png",
         "date":  "2026-07-02",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Adorabat and Gatomon, done in a Magma session with <a href=\"https://x.com/inkune111\" target=\"_blank\" rel=\"noopener noreferrer\">Inkune</a>.",
         "alt":  "Artwork from 2026-07-02",
         "tags":  [
                      "Digital Art",
@@ -166,7 +230,7 @@ window.portfolioItems =
     {
         "file":  "2026/2026-07-02 2.png",
         "date":  "2026-07-02",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Snewwww! ArtFight attack for <a href=\"https://x.com/HeroKing7077\" target=\"_blank\" rel=\"noopener noreferrer\">HeroKing</a>.",
         "alt":  "Artwork from 2026-07-02",
         "tags":  [
                      "Digital Art",
@@ -178,7 +242,7 @@ window.portfolioItems =
     {
         "file":  "2026/2026-07-01 1.png",
         "date":  "2026-07-01",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Alina knows ball! ArtFight attack for <a href=\"https://x.com/sonokido\" target=\"_blank\" rel=\"noopener noreferrer\">Sonokido</a>.",
         "alt":  "Artwork from 2026-07-01",
         "tags":  [
                      "Digital Art",
@@ -190,7 +254,7 @@ window.portfolioItems =
     {
         "file":  "2026/2026-07-01 2.png",
         "date":  "2026-07-01",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Donde esta Lucy! ArtFight attack for <a href=\"https://bsky.app/profile/taeshi.bcb.cat\" target=\"_blank\" rel=\"noopener noreferrer\">Taeshi</a>.",
         "alt":  "Artwork from 2026-07-01",
         "tags":  [
                      "Digital Art",
@@ -202,7 +266,7 @@ window.portfolioItems =
     {
         "file":  "2026/2026-06-30.png",
         "date":  "2026-06-30",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Chloe the cat.",
         "alt":  "Artwork from 2026-06-30",
         "tags":  [
                      "Digital Art",
@@ -213,7 +277,7 @@ window.portfolioItems =
     {
         "file":  "2026/2026-06-28.png",
         "date":  "2026-06-28",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Laika Haley!.",
         "alt":  "Artwork from 2026-06-28",
         "tags":  [
                      "Digital Art",
@@ -224,7 +288,7 @@ window.portfolioItems =
     {
         "file":  "2026/2026-06-26.png",
         "date":  "2026-06-26",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Noelle chapter 5.",
         "alt":  "Artwork from 2026-06-26",
         "tags":  [
                      "Best works",
@@ -235,7 +299,7 @@ window.portfolioItems =
     {
         "file":  "2026/2026-06-24.png",
         "date":  "2026-06-24",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Noelle thorn ring.",
         "alt":  "Artwork from 2026-06-24",
         "tags":  [
                      "Best works",
@@ -246,7 +310,7 @@ window.portfolioItems =
     {
         "file":  "2026/2026-06-19.png",
         "date":  "2026-06-19",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Milo's in love!.",
         "alt":  "Artwork from 2026-06-19",
         "tags":  [
                      "Digital Art",
@@ -257,7 +321,7 @@ window.portfolioItems =
     {
         "file":  "2026/2026-06-17 1.png",
         "date":  "2026-06-17",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Alice! Gift for <a href=\"https://x.com/waffl3k4t\" target=\"_blank\" rel=\"noopener noreferrer\">Waffu</a>.",
         "alt":  "Artwork from 2026-06-17",
         "tags":  [
                      "Digital Art",
@@ -268,7 +332,7 @@ window.portfolioItems =
     {
         "file":  "2026/2026-06-17 2.png",
         "date":  "2026-06-17",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Mati! For HazPoss.",
         "alt":  "Artwork from 2026-06-17",
         "tags":  [
                      "Digital Art",
@@ -279,7 +343,7 @@ window.portfolioItems =
     {
         "file":  "2026/2026-06-15.png",
         "date":  "2026-06-15",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Milo reference page.",
         "alt":  "Artwork from 2026-06-15",
         "tags":  [
                      "Digital Art",
@@ -290,7 +354,7 @@ window.portfolioItems =
     {
         "file":  "2026/2026-06-11.png",
         "date":  "2026-06-11",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Fenna bun! For <a href=\"https://x.com/TheBlackHex\" target=\"_blank\" rel=\"noopener noreferrer\">Hex</a>.",
         "alt":  "Artwork from 2026-06-11",
         "tags":  [
                      "Best works",
@@ -302,7 +366,7 @@ window.portfolioItems =
     {
         "file":  "2026/2026-05-30.png",
         "date":  "2026-05-30",
-        "description":  "Description to edit.",
+        "descriptionHtml": "The Inu stare.",
         "alt":  "Artwork from 2026-05-30",
         "tags":  [
                      "Best works",
@@ -314,7 +378,7 @@ window.portfolioItems =
     {
         "file":  "2026/2026-05-29.png",
         "date":  "2026-05-29",
-        "description":  "Description to edit.",
+        "descriptionHtml": "The fox and the Shiba Inu girl.",
         "alt":  "Artwork from 2026-05-29",
         "tags":  [
                      "Best works",
@@ -326,7 +390,7 @@ window.portfolioItems =
     {
         "file":  "2026/2026-05-27.png",
         "date":  "2026-05-27",
-        "description":  "Description to edit.",
+        "descriptionHtml": "TraditInu.",
         "alt":  "Artwork from 2026-05-27",
         "tags":  [
                      "Best works",
@@ -338,7 +402,7 @@ window.portfolioItems =
     {
         "file":  "2026/2026-05-24.png",
         "date":  "2026-05-24",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Cover art for &quot;Forgotten Promises&quot; chapter 2, for <a href=\"https://x.com/sketchesJang\" target=\"_blank\" rel=\"noopener noreferrer\">DreamKnight JANG</a>.",
         "alt":  "Artwork from 2026-05-24",
         "tags":  [
                      "Best works",
@@ -350,7 +414,7 @@ window.portfolioItems =
     {
         "file":  "2026/2026-05-20.png",
         "date":  "2026-05-20",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Inu sitting.",
         "alt":  "Artwork from 2026-05-20",
         "tags":  [
                      "Best works",
@@ -362,7 +426,7 @@ window.portfolioItems =
     {
         "file":  "2026/2026-05-15.png",
         "date":  "2026-05-15",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Kit's Kung Fu outfit from Gameoverse's pilot!.",
         "alt":  "Artwork from 2026-05-15",
         "tags":  [
                      "Best works",
@@ -373,7 +437,7 @@ window.portfolioItems =
     {
         "file":  "2026/2026-05-14.png",
         "date":  "2026-05-14",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Kit from Gameoverse!.",
         "alt":  "Artwork from 2026-05-14",
         "tags":  [
                      "Digital Art",
@@ -383,7 +447,7 @@ window.portfolioItems =
     {
         "file":  "2026/2026-05-12.png",
         "date":  "2026-05-12",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Gift art of Syrup for for <a href=\"https://x.com/MistaRJ06\" target=\"_blank\" rel=\"noopener noreferrer\">RaccoonJefferson</a>.",
         "alt":  "Artwork from 2026-05-12",
         "tags":  [
                      "Digital Art",
@@ -394,7 +458,7 @@ window.portfolioItems =
     {
         "file":  "2026/2026-05-10.png",
         "date":  "2026-05-10",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Suki Lane.",
         "alt":  "Artwork from 2026-05-10",
         "tags":  [
                      "Digital Art",
@@ -404,7 +468,7 @@ window.portfolioItems =
     {
         "file":  "2026/2026-05-05.png",
         "date":  "2026-05-05",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Inu at the jacaranda tree.",
         "alt":  "Artwork from 2026-05-05",
         "tags":  [
                      "Best works",
@@ -416,7 +480,7 @@ window.portfolioItems =
     {
         "file":  "2026/2026-05-02.png",
         "date":  "2026-05-02",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Wapeach.",
         "alt":  "Artwork from 2026-05-02",
         "tags":  [
                      "Best works",
@@ -428,7 +492,7 @@ window.portfolioItems =
     {
         "file":  "2026/2026-04-14.png",
         "date":  "2026-04-14",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Loona from Helluva Boss.",
         "alt":  "Artwork from 2026-04-14",
         "tags":  [
                      "Best works",
@@ -439,7 +503,7 @@ window.portfolioItems =
     {
         "file":  "2026/2026-04-07.png",
         "date":  "2026-04-07",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Caligraphy Owl.",
         "alt":  "Artwork from 2026-04-07",
         "tags":  [
                      "Traditional Art",
@@ -450,7 +514,7 @@ window.portfolioItems =
     {
         "file":  "2026/2026-03-18.png",
         "date":  "2026-03-18",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Cate Meowdy from Fortnite.",
         "alt":  "Artwork from 2026-03-18",
         "tags":  [
                      "Digital Art",
@@ -460,7 +524,7 @@ window.portfolioItems =
     {
         "file":  "2026/2026-03-16.png",
         "date":  "2026-03-16",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Phoebe the Space Invader! Artchain for <a href=\"https://x.com/TheBlackHex\" target=\"_blank\" rel=\"noopener noreferrer\">Hex</a>. at <a href=\"https://discord.gg/9RR3SwenqV\" target=\"_blank\" rel=\"noopener noreferrer\">my Discord server</a>.",
         "alt":  "Artwork from 2026-03-16",
         "tags":  [
                      "Best works",
@@ -473,7 +537,7 @@ window.portfolioItems =
     {
         "file":  "2026/2026-03-01.png",
         "date":  "2026-03-01",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Artchain Syrup for for <a href=\"https://x.com/MistaRJ06\" target=\"_blank\" rel=\"noopener noreferrer\">RaccoonJefferson</a> at <a href=\"https://discord.gg/9RR3SwenqV\" target=\"_blank\" rel=\"noopener noreferrer\">my Discord server</a>.",
         "alt":  "Artwork from 2026-03-01",
         "tags":  [
                      "Digital Art",
@@ -484,7 +548,7 @@ window.portfolioItems =
     {
         "file":  "2026/2026-01-02.png",
         "date":  "2026-01-02",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Inu's picture.",
         "alt":  "Artwork from 2026-01-02",
         "tags":  [
                      "Digital Art",
@@ -495,7 +559,7 @@ window.portfolioItems =
     {
         "file":  "2025/2025-12-29.png",
         "date":  "2025-12-29",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Jezabel The Cat! For the comic &quot;Never date a girl with a weird name&quot;.",
         "alt":  "Artwork from 2025-12-29",
         "tags":  [
                      "Traditional Art",
@@ -505,7 +569,7 @@ window.portfolioItems =
     {
         "file":  "2025/2025-12-24.png",
         "date":  "2025-12-24",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Murami Secret Santa for <a href=\"https://www.furaffinity.net/user/martifex/\" target=\"_blank\" rel=\"noopener noreferrer\">Artifex</a>.",
         "alt":  "Artwork from 2025-12-24",
         "tags":  [
                      "Digital Art",
@@ -516,7 +580,7 @@ window.portfolioItems =
     {
         "file":  "2025/2025-12-11.png",
         "date":  "2025-12-11",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Graduation doodle featuring Abigail from HopE.",
         "alt":  "Artwork from 2025-12-11",
         "tags":  [
                      "Digital Art",
@@ -527,7 +591,7 @@ window.portfolioItems =
     {
         "file":  "2025/2025-12-01.png",
         "date":  "2025-12-01",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Bonita Birthday Gift for <a href=\"https://x.com/GatodelFuturo\" target=\"_blank\" rel=\"noopener noreferrer\">Gato del Futuro</a>.",
         "alt":  "Artwork from 2025-12-01",
         "tags":  [
                      "Traditional Art",
@@ -538,7 +602,7 @@ window.portfolioItems =
     {
         "file":  "2025/2025-11-26.png",
         "date":  "2025-11-26",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Inu!.",
         "alt":  "Artwork from 2025-11-26",
         "tags":  [
                      "Best works",
@@ -550,7 +614,7 @@ window.portfolioItems =
     {
         "file":  "2025/2025-11-15.png",
         "date":  "2025-11-15",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Purity the maid robod mink! Birthday Gift for <a href=\"https://x.com/TheBlackHex\" target=\"_blank\" rel=\"noopener noreferrer\">Hex</a>.",
         "alt":  "Artwork from 2025-11-15",
         "tags":  [
                      "Best works",
@@ -562,7 +626,7 @@ window.portfolioItems =
     {
         "file":  "2025/2025-11-13.jfif",
         "date":  "2025-11-13",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Inu in the Dark, Acrylics on Canvas.",
         "alt":  "Artwork from 2025-11-13",
         "tags":  [
                      "Best works",
@@ -574,7 +638,7 @@ window.portfolioItems =
     {
         "file":  "2025/2025-11-10.png",
         "date":  "2025-11-10",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Leiya! Birthday Gift for <a href=\"https://www.furaffinity.net/user/cheeru/\" target=\"_blank\" rel=\"noopener noreferrer\">Cheeru</a>.",
         "alt":  "Artwork from 2025-11-10",
         "tags":  [
                      "Digital Art",
@@ -585,7 +649,7 @@ window.portfolioItems =
     {
         "file":  "2025/2025-11-05.png",
         "date":  "2025-11-05",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Alice and Chloe! Birthday gift for <a href=\"https://x.com/waffl3k4t\" target=\"_blank\" rel=\"noopener noreferrer\">Waffu</a>.",
         "alt":  "Artwork from 2025-11-05",
         "tags":  [
                      "Digital Art",
@@ -598,7 +662,7 @@ window.portfolioItems =
     {
         "file":  "2025/2025-10-31.png",
         "date":  "2025-10-31",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Halloween doodle of Inu as a kitty.",
         "alt":  "Artwork from 2025-10-31",
         "tags":  [
                      "Digital Art",
@@ -609,7 +673,7 @@ window.portfolioItems =
     {
         "file":  "2025/2025-10-25.png",
         "date":  "2025-10-25",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Chloe the Cheetah, for a Halloween event at <a href=\"https://discord.gg/9RR3SwenqV\" target=\"_blank\" rel=\"noopener noreferrer\">My Server</a>.",
         "alt":  "Artwork from 2025-10-25",
         "tags":  [
                      "Best works",
@@ -622,7 +686,7 @@ window.portfolioItems =
     {
         "file":  "2025/2025-10-21.png",
         "date":  "2025-10-21",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Go! Isabelle from Animal Crossing.",
         "alt":  "Artwork from 2025-10-21",
         "tags":  [
                      "Best works",
@@ -634,7 +698,7 @@ window.portfolioItems =
     {
         "file":  "2025/2025-10-18.png",
         "date":  "2025-10-18",
-        "description":  "Description to edit.",
+        "descriptionHtml": "JK-chan! Birthday gift for <a href=\"https://x.com/EL_K_8187\" target=\"_blank\" rel=\"noopener noreferrer\">EL-K</a>.",
         "alt":  "Artwork from 2025-10-18",
         "tags":  [
                      "Best works",
@@ -646,7 +710,7 @@ window.portfolioItems =
     {
         "file":  "2025/2025-10-09 1.png",
         "date":  "2025-10-09",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Sprocket! Gift art for <a href=\"https://x.com/Inzannityy\" target=\"_blank\" rel=\"noopener noreferrer\">Inzanity</a>.",
         "alt":  "Artwork from 2025-10-09",
         "tags":  [
                      "Digital Art",
@@ -657,7 +721,7 @@ window.portfolioItems =
     {
         "file":  "2025/2025-10-09 2.png",
         "date":  "2025-10-09",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Inu as Venus.",
         "alt":  "Artwork from 2025-10-09",
         "tags":  [
                      "Digital Art",
@@ -668,7 +732,7 @@ window.portfolioItems =
     {
         "file":  "2025/2025-10-05.png",
         "date":  "2025-10-05",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Laika, Inu and Milo in an opening scene from Space Invader Lum.",
         "alt":  "Artwork from 2025-10-05",
         "tags":  [
                      "Digital Art",
@@ -679,7 +743,7 @@ window.portfolioItems =
     {
         "file":  "2025/2025-10-02 1.png",
         "date":  "2025-10-02",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Max! Birthday Gift for <a href=\"https://instagram.com/taxaxe/\" target=\"_blank\" rel=\"noopener noreferrer\">Taxaxe</a>.",
         "alt":  "Artwork from 2025-10-02",
         "tags":  [
                      "Digital Art",
@@ -690,7 +754,7 @@ window.portfolioItems =
     {
         "file":  "2025/2025-10-02 2.png",
         "date":  "2025-10-02",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Cutesona! Birthday gift for <a href=\"https://x.com/Gonenannurs\" target=\"_blank\" rel=\"noopener noreferrer\">Gonenannurs</a>.",
         "alt":  "Artwork from 2025-10-02",
         "tags":  [
                      "Best works",
@@ -702,7 +766,7 @@ window.portfolioItems =
     {
         "file":  "2025/2025-10-01.png",
         "date":  "2025-10-01",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Milo and Inu role reversal!.",
         "alt":  "Artwork from 2025-10-01",
         "tags":  [
                      "Digital Art",
@@ -713,7 +777,7 @@ window.portfolioItems =
     {
         "file":  "2025/2025-09-30.png",
         "date":  "2025-09-30",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Mati! Birthday gift for Hazposs.",
         "alt":  "Artwork from 2025-09-30",
         "tags":  [
                      "Best works",
@@ -725,7 +789,7 @@ window.portfolioItems =
     {
         "file":  "2025/2025-09-23 1.jfif",
         "date":  "2025-09-23",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Laika, Frija for <a href=\"https://x.com/abustedtoaster\" target=\"_blank\" rel=\"noopener noreferrer\">BrokenToaster</a> and <a href=\"https://x.com/TheBlackHex\" target=\"_blank\" rel=\"noopener noreferrer\">Hex</a>.",
         "alt":  "Artwork from 2025-09-23",
         "tags":  [
                      "Traditional Art",
@@ -738,7 +802,7 @@ window.portfolioItems =
     {
         "file":  "2025/2025-09-23 2.jfif",
         "date":  "2025-09-23",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Sandy for <a href=\"https://x.com/runningbluejay\" target=\"_blank\" rel=\"noopener noreferrer\">Jay-man</a> and Mati for Hazposs.",
         "alt":  "Artwork from 2025-09-23",
         "tags":  [
                      "Traditional Art",
@@ -749,7 +813,7 @@ window.portfolioItems =
     {
         "file":  "2025/2025-09-23 3.jfif",
         "date":  "2025-09-23",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Art for <a href=\"https://x.com/CardCaph\" target=\"_blank\" rel=\"noopener noreferrer\">Card</a>.",
         "alt":  "Artwork from 2025-09-23",
         "tags":  [
                      "Traditional Art",
@@ -760,7 +824,7 @@ window.portfolioItems =
     {
         "file":  "2025/2025-09-15.jfif",
         "date":  "2025-09-15",
-        "description":  "Description to edit.",
+        "descriptionHtml": "Inu made with pens.",
         "alt":  "Artwork from 2025-09-15",
         "tags":  [
                      "Traditional Art",
@@ -771,7 +835,7 @@ window.portfolioItems =
     {
         "file":  "2025/2025-07-23.png",
         "date":  "2025-07-23",
-        "description":  "Description to edit.",
+        "descriptionHtml":  "Snow, artfight attack for <a href=\"https://x.com/HeroKing7077\" target=\"_blank\" rel=\"noopener noreferrer\">HeroKing</a>.",
         "alt":  "Artwork from 2025-07-23",
         "tags":  [
                      "Digital Art",
@@ -783,7 +847,7 @@ window.portfolioItems =
     {
         "file":  "2025/2025-07-22.png",
         "date":  "2025-07-22",
-        "description":  "Description to edit.",
+        "description":  "Matcha, artfight attack for <a href=\"https://x.com/Dougiefluff\" target=\"_blank\" rel=\"noopener noreferrer\">Dougiefluff</a>.",
         "alt":  "Artwork from 2025-07-22",
         "tags":  [
                      "Best works",
