@@ -847,7 +847,7 @@ window.portfolioItems =
     {
         "file":  "2025/2025-07-22.png",
         "date":  "2025-07-22",
-        "description":  "Matcha, artfight attack for <a href=\"https://x.com/Dougiefluff\" target=\"_blank\" rel=\"noopener noreferrer\">Dougiefluff</a>.",
+        "descriptionHtml":  "Matcha, artfight attack for <a href=\"https://x.com/Dougiefluff\" target=\"_blank\" rel=\"noopener noreferrer\">Dougiefluff</a>.",
         "alt":  "Artwork from 2025-07-22",
         "tags":  [
                      "Best works",
