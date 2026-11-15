@@ -10,7 +10,9 @@
     return b.date.localeCompare(a.date);
   });
   let current = 0, lastFocus = null, artworkRequest = 0;
+  let turnRequest = 0, turning = false, finishTurn = null;
   const artworkCache = new Map();
+  const readyArtwork = new Set();
   const $ = id => document.getElementById(id);
   document.addEventListener('DOMContentLoaded', init);
   function init() {
@@ -23,7 +25,10 @@
       const artist=document.createElement('span'); artist.textContent=entry.artist;
       const characters=document.createElement('small'); characters.textContent=entry.characters.join(', ');
       button.append(img,artist,characters);
-      button.addEventListener('click',()=>{ render(index,true); setIndex(false); $('notebookBook').scrollIntoView({behavior:'smooth'}); });
+      button.addEventListener('click',()=>{
+        cancelTurn(); render(index); setIndex(false);
+        $('notebookBook').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+      });
       $('notebookIndexGrid').append(button);
     });
     $('notebookPrevious').addEventListener('click',()=>move(-1));
@@ -34,45 +39,89 @@
     document.querySelector('.notebook-lightbox-close').addEventListener('click',closeLightbox);
     $('notebookLightbox').addEventListener('click',e=>{if(e.target===$('notebookLightbox')) closeLightbox();});
     $('notebookArtwork').addEventListener('load',sizePhotoMount);
-    window.addEventListener('resize',sizePhotoMount);
+    window.addEventListener('resize',()=>{cancelTurn();sizePhotoMount();});
+    matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change',cancelTurn);
     document.addEventListener('keydown',e=>{
       const open=$('notebookLightbox').classList.contains('is-open');
       if(e.key==='Escape'&&open) closeLightbox();
-      if(!open&&e.key==='ArrowLeft') move(-1);
-      if(!open&&e.key==='ArrowRight') move(1);
+      if(e.target.closest('input,textarea,select,[contenteditable="true"]'))return;
+      if(!open&&e.key==='ArrowLeft'){e.preventDefault();move(-1);}
+      if(!open&&e.key==='ArrowRight'){e.preventDefault();move(1);}
     });
     const wanted=new URLSearchParams(location.search).get('drawing');
-    const found=entries.findIndex(e=>e.id===wanted); render(found<0?0:found,false);
+    const found=entries.findIndex(e=>e.id===wanted); render(found<0?0:found);
   }
-  function move(step){
-    if(entries.length<2||document.querySelector('.page-turn-overlay'))return;
+  function cancelTurn(){
+    ++turnRequest;
+    if(finishTurn)finishTurn();
+    turning=false;
+    $('notebookBook').removeAttribute('aria-busy');
+  }
+  function paperCopy(node){
+    const copy=node.cloneNode(true);
+    copy.removeAttribute('id');
+    copy.querySelectorAll('[id]').forEach(child=>child.removeAttribute('id'));
+    copy.querySelectorAll('[aria-labelledby],[aria-controls]').forEach(child=>{
+      child.removeAttribute('aria-labelledby');child.removeAttribute('aria-controls');
+    });
+    copy.setAttribute('aria-hidden','true');
+    copy.inert=true;
+    return copy;
+  }
+  async function move(step){
+    if(entries.length<2||turning)return;
     const next=(current+step+entries.length)%entries.length;
-    if(matchMedia('(prefers-reduced-motion: reduce)').matches){render(next,false);return;}
-    if(matchMedia('(max-width: 760px)').matches){
-      render(next,false);
-      const pages=$('notebookPages');
-      pages.classList.remove('mobile-swap-next','mobile-swap-previous');
-      void pages.offsetWidth;
-      pages.classList.add(step>0?'mobile-swap-next':'mobile-swap-previous');
-      window.setTimeout(()=>pages.classList.remove('mobile-swap-next','mobile-swap-previous'),280);
-      return;
-    }
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches){render(next);return;}
+    turning=true;
+    const request=++turnRequest, book=$('notebookBook'), pages=$('notebookPages');
+    book.setAttribute('aria-busy','true');
+    // Keep the current spread intact until the next photograph is decoded.
+    try{await loadArtwork(variantSource(entries[next],'display'));}
+    catch(error){if(request===turnRequest){cancelTurn();render(next);}return;}
+    if(request!==turnRequest)return;
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches){cancelTurn();render(next);return;}
+    const mobile=matchMedia('(max-width: 760px)').matches;
     const frontSelector=step>0?'.notebook-art-page':'.notebook-info-page';
     const backSelector=step>0?'.notebook-info-page':'.notebook-art-page';
-    const turningPage=document.querySelector(frontSelector).cloneNode(true);
-    turningPage.removeAttribute('aria-label');
-    turningPage.className=`notebook-page-sheet page-turn-overlay ${step>0?'notebook-art-page page-turn-next':'notebook-info-page page-turn-previous'}`;
-    turningPage.querySelectorAll('[id]').forEach(node=>node.removeAttribute('id'));
-    const clonedButton=turningPage.querySelector('button'); if(clonedButton)clonedButton.tabIndex=-1;
-    render(next,false);
-    const back=document.querySelector(backSelector).cloneNode(true);
-    back.className=`page-turn-back ${step>0?'notebook-info-page':'notebook-art-page'}`; back.querySelectorAll('[id]').forEach(node=>node.removeAttribute('id'));
-    const backButton=back.querySelector('button'); if(backButton)backButton.tabIndex=-1;
-    turningPage.append(back);
-    $('notebookPages').append(turningPage);
-    turningPage.addEventListener('animationend',()=>turningPage.remove(),{once:true});
+    const sheet=document.createElement('div');
+    sheet.className=`page-turn-overlay ${step>0?'page-turn-next':'page-turn-previous'}`;
+    sheet.setAttribute('aria-hidden','true');sheet.inert=true;
+    const mobileReturn=mobile&&step<0;
+    let front=mobileReturn?null:paperCopy(mobile?pages:pages.querySelector(frontSelector));
+    const resting=mobile?(mobileReturn?paperCopy(pages):null):paperCopy(pages.querySelector(backSelector));
+    if(resting)resting.classList.add('page-turn-resting',mobile?'page-turn-resting-mobile':step>0?'page-turn-resting-left':'page-turn-resting-right');
+    render(next);
+    // Both faces now contain their actual artwork, never a loading placeholder.
+    sizePhotoMount();
+    // On a top-bound notebook, the previous sheet falls back onto the old page.
+    if(mobileReturn)front=paperCopy(pages);
+    front.classList.add('page-turn-face','page-turn-front');
+    if(mobile)front.classList.add('page-turn-mobile-spread');
+    sheet.append(front);
+    if(!mobile){
+      const back=paperCopy(pages.querySelector(backSelector));
+      back.classList.add('page-turn-face','page-turn-back');
+      sheet.append(back);
+    }
+    if(resting)pages.append(resting);
+    pages.append(sheet);
+    book.classList.add('is-turning',step>0?'is-turning-next':'is-turning-previous');
+    let timer, finished=false;
+    const finish=()=>{
+      if(finished)return;
+      finished=true;
+      window.clearTimeout(timer);sheet.remove();if(resting)resting.remove();
+      book.classList.remove('is-turning','is-turning-next','is-turning-previous');
+      book.removeAttribute('aria-busy');turning=false;finishTurn=null;
+      sizePhotoMount();
+    };
+    finishTurn=finish;
+    sheet.addEventListener('animationend',event=>{if(event.target===sheet)finish();});
+    sheet.addEventListener('animationcancel',event=>{if(event.target===sheet)finish();});
+    // Also release navigation if the browser interrupts an animation.
+    timer=window.setTimeout(finish,1100);
   }
-  function render(index,animate,step=1){
+  function render(index){
     current=index; const e=entries[index];
     $('entryNumber').textContent=String(index+1); $('notebookCount').textContent=`${index+1} / ${entries.length}`;
     $('entryArtist').textContent=e.artist; $('entryDate').textContent=formatDate(e.date);
@@ -88,9 +137,7 @@
   }
   function loadCurrentArtwork(src,alt,index){
     const request=++artworkRequest;
-    $('notebookArtButton').classList.add('is-loading');
-    $('notebookArtButton').setAttribute('aria-busy','true');
-    loadArtwork(src).then(()=>{
+    const showArtwork=()=>{
       if(request!==artworkRequest||index!==current)return;
       const artwork=$('notebookArtwork'), lightboxImage=$('notebookLightboxImage');
       artwork.src=src; artwork.alt=alt; lightboxImage.src=src; lightboxImage.alt=alt;
@@ -98,7 +145,11 @@
       $('notebookArtButton').removeAttribute('aria-busy');
       window.requestAnimationFrame(sizePhotoMount);
       preloadNeighbors(index);
-    }).catch(()=>{
+    };
+    if(readyArtwork.has(src)){showArtwork();return;}
+    $('notebookArtButton').classList.add('is-loading');
+    $('notebookArtButton').setAttribute('aria-busy','true');
+    loadArtwork(src).then(showArtwork).catch(()=>{
       if(request!==artworkRequest||index!==current)return;
       $('notebookArtButton').classList.remove('is-loading');
       $('notebookArtButton').classList.add('has-load-error');
@@ -110,9 +161,10 @@
     const promise=new Promise((resolve,reject)=>{
       const image=new Image();
       image.decoding='async';
+      const ready=()=>{readyArtwork.add(src);resolve();};
       image.onload=()=>{
-        if(typeof image.decode==='function')image.decode().catch(()=>{}).finally(resolve);
-        else resolve();
+        if(typeof image.decode==='function')image.decode().catch(()=>{}).finally(ready);
+        else ready();
       };
       image.onerror=reject;
       image.src=src;
