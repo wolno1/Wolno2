@@ -227,3 +227,35 @@ window.notebookEntries.push(
     description: 'Commission I got at the Animex 2026! Viky made a beautiful job with this commission! I knew she was going to since she showed me some previous commissions, she is super talented!'
   }
 );
+
+window.notebookEntries.push(
+  {
+    id: 'chorizo', image: 'chorizo.png', dimensions: '5100 × 6588 px',
+    artist: 'Chorizo', date: '2026-09-19', characters: ['Inu'],
+    socials: [
+      { label: 'TikTok', url: 'https://www.tiktok.com/@superchorizo67' }
+    ],
+    description: 'Commission I got at the Oops con 2026!'
+  },
+  {
+    id: 'wymek', image: 'wymek.png', dimensions: '4704 × 3270 px',
+    artist: 'WymekWitip', date: '2026-07-19', characters: ['Inu'],
+    socials: [
+      { label: 'Twitter / X', url: 'https://x.com/WymekWitip' },
+      { label: 'Bluesky', url: 'https://bsky.app/profile/wymek.bsky.social' },
+      { label: 'FurAffinity', url: 'https://www.furaffinity.net/user/wymek/' },
+      { label: 'Facebook', url: 'https://www.facebook.com/WymTheRedPanda/' }
+    ],
+    description: "Commission I got at Furregios 2026! Couldn't get it then but I received it at Animex 2026!"
+  },
+  {
+    id: 'jackzarts', image: 'jackzarts.png', dimensions: '4992 × 5334 px',
+    artist: 'jackzarts', date: '2026-11-14', characters: ['Inu'],
+    socials: [
+      { label: 'Instagram', url: 'https://www.instagram.com/jackzarts/' },
+      { label: 'Bluesky', url: 'https://bsky.app/profile/jackzarts.bsky.social' },
+      { label: 'Tumblr', url: 'https://jackzarts.tumblr.com' }
+    ],
+    description: 'Commission I got at LaConve 2026! I was wandering through the artist alley and saw Jackzarts working on some arts, I KNEW I had to get an Inu art by her and of course, the result was beautiful!!'
+  }
+);
