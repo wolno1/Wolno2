@@ -259,3 +259,25 @@ window.notebookEntries.push(
     description: 'Commission I got at LaConve 2026! I was wandering through the artist alley and saw Jackzarts working on some arts, I KNEW I had to get an Inu art by her and of course, the result was beautiful!!'
   }
 );
+
+window.notebookEntries.push(
+  {
+    id: 'jullbaboon', image: 'Jillbaboon.png', dimensions: '3528 × 4980 px',
+    artist: 'Jullbaboon', date: '2026-11-15', characters: ['Inu'],
+    socials: [
+      { label: 'Instagram', url: 'https://www.instagram.com/jillbaboonson/' },
+      { label: 'Twitter / X', url: 'https://x.com/Alvaroblorch' }
+    ],
+    description: 'Commission I got at LaConve 2026, it was worth the wait!!'
+  },
+  {
+    id: 'pinky', image: 'Pinky.png', dimensions: '2220 × 3678 px',
+    artist: 'Pinky', date: '2026-11-15', characters: ['Inu'],
+    socials: [
+      { label: 'Instagram', url: 'https://www.instagram.com/lilpinkghost/' },
+      { label: 'Bluesky', url: 'https://bsky.app/profile/lilpinkghost.bsky.social' },
+      { label: 'Facebook', url: 'https://www.facebook.com/LilPinkGhost' }
+    ],
+    description: 'Ever since I met Pinky I KNEW I wanted a commission Pinky and I FINALLY got to at LaConve 2026. As you can see, the result is BEAUTIFUL'
+  }
+);
